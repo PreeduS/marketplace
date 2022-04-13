@@ -24,6 +24,58 @@ const Home = () => {
     return Icon
   }
 
+  const categories = [
+    {name: 'Foundation'},
+    {name: 'Algebra'},
+    {name: 'ML'},
+    {name: 'Optimization'},
+    {name: 'Chemistry'},
+  ]
+  const categories2 = [
+    {
+      name: 'Applications',
+      items: [
+        {
+          title: 'Routing Demo',
+          details: 'Details',
+          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+          disabled: false,
+        },
+        {
+          title: 'Forecasting Demo',
+          details: 'Details',
+          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+          disabled: false,
+        },
+        ...Array.from(Array(4).keys()).map(() => ({
+          title: 'Title',
+          details: 'Details',
+          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+          disabled: true,
+        }))
+      ]
+
+    },
+    {
+      name: 'Learning Assets',
+      items: Array.from(Array(6).keys()).map(() => ({
+        title: 'Title',
+        details: 'Details',
+        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+        disabled: true,
+      }))
+    },
+    {
+      name: 'Algorithms',
+      items: Array.from(Array(6).keys()).map(() => ({
+        title: 'Title',
+        details: 'Details',
+        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+        disabled: true,
+      }))
+    },
+  ]
+
   return(<Wrapper>
   <AppHeader />
  
@@ -40,73 +92,73 @@ const Home = () => {
     </IntroBanner>
 
     <Content>
-      <h4>Featured Categories </h4>
+      <h4>Featured products </h4>
       <BoxItemsInline>
         <BoxItem title = 'Routing Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
         <BoxItem title = 'Forecasting Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
 
         {Array.from(Array(4).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
+          <BoxItem 
+            title = 'Title' 
+            details = 'Details' 
+            description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
+            disabled
+          />
         )}
         
       </BoxItemsInline>
     </Content>
 
     <CategoryBanner>
-      {Array.from(Array(21).keys()).map((index)=> 
+    {[...categories, ...categories2].map(category => (
+      <CategoryBannerItem onClick = {() =>  navigate(`/explore`)}> 
+        <IconContainer>
+          {getIcon(0)}
+      </IconContainer>   
+        {category.name}
+      </CategoryBannerItem>
+    ))}
+
+
+      {Array.from(Array(13).keys()).map((index)=> 
         <CategoryBannerItem onClick = {() =>  navigate(`/explore`)}> 
           <IconContainer>
             {getIcon(index)}
         </IconContainer>   
-          Category item {index + 1}
+          Category Item
         </CategoryBannerItem>
       )}
     </CategoryBanner>
 
+    {categories2.map(category => (
+         <Content>
+         <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>{category.name}</h4>
+         <BoxItemsInline>
+         
 
-    <Content>
-      <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>Category Name 1 </h4>
-      <BoxItemsInline>
-      
-        {Array.from(Array(6).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-        )}
-        
-      </BoxItemsInline>
-    </Content>
+          {category.items.map(item => {
+            return <BoxItem 
+            title = {item.title} 
+            details = {item.details}
+            description = {item.description}
+            disabled = {item.disabled}
+         />
+          })}
 
-    <Content>
-      <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>Category Name 2 </h4>
-      <BoxItemsInline>
-      
-        {Array.from(Array(6).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-        )}
-        
-      </BoxItemsInline>
-    </Content>
+           {/*Array.from(Array(6).keys()).map(()=> 
+             <BoxItem 
+                title = 'Title' 
+                details = 'Details' 
+                description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
+                disabled
+             />
+          )*/}
+           
+         </BoxItemsInline>
+       </Content> 
+    ))}
 
-    <Content>
-      <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>Category Name 3 </h4>
-      <BoxItemsInline>
-      
-        {Array.from(Array(6).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-        )}
-        
-      </BoxItemsInline>
-    </Content>
-
-    <Content>
-      <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>Category Name 4 </h4>
-      <BoxItemsInline>
-      
-        {Array.from(Array(6).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-        )}
-        
-      </BoxItemsInline>
-    </Content>
+   
 
   </Wrapper>)
 }

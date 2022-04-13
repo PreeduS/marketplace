@@ -19,6 +19,7 @@ export const Content = styled.div`
 `;
 
 
-export const Header = styled.h4<{marginTop?: string}>`
+export const Header = styled.h4<{marginTop?: string, marginBottom?: string}>`
   margin-top: ${props => props.marginTop || 0};
+  margin-bottom: ${props => props.marginBottom || 0};
 `

@@ -14,7 +14,7 @@ const Explore = () => {
   <Sidemenu />
     <Content>
   
-      <h3>Header </h3>
+      <h3>Products </h3>
       <Description>
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
       </Description>
@@ -23,7 +23,12 @@ const Explore = () => {
       <BoxItem title = 'Forecasting Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
 
         {Array.from(Array(24).keys()).map(()=> 
-          <BoxItem title = 'Title' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
+          <BoxItem 
+            title = 'Title' 
+            details = 'Details' 
+            description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
+            disabled
+          />
         )}
         
       </BoxItems>

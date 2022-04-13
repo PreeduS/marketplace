@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { coolGray } from '@carbon/colors';
 
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{disabled?: boolean}>`
   width: 14rem;
   min-height: 12.5rem;
   display: flex;
@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
   margin-bottom: 1.5rem;
  
   border: 1px solid ${coolGray[20]};
+
+  ${props => props.disabled && `
+    opacity: .7;
+    cursor: default;
+  `}
   
 `;
 

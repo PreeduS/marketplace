@@ -10,18 +10,29 @@ type Props = {
   title: React.ReactNode
   details: React.ReactNode
   description: React.ReactNode
+  disabled?: boolean
 } 
 
-const BoxItem = ({title, details, description}: Props) => {
-  let navigate = useNavigate();
+const BoxItem = ({title, details, description, disabled}: Props) => {
+  const navigate = useNavigate();
 
-  return(<Wrapper>
+  const clickHandler =  React.useMemo(()=>{
+    if(disabled){
+      return undefined;
+    }
+    return () => {
+      navigate(`/product`)
+    }
+
+  }, [disabled, navigate])
+
+  return(<Wrapper disabled = {disabled}>
     <IconContainer>
       <Carbon32 />
     </IconContainer>        
  
 
-    <Typography as = 'h5' marginBottom='.25rem' onClick = {() =>  navigate(`/product`)}>{title}</Typography>
+    <Typography as = 'h5' marginBottom='.25rem' onClick = {clickHandler}>{title}</Typography>
     <Details>
         {details}
     </Details>

@@ -1,8 +1,8 @@
-docker build -t user/marketplace:1.0 .
+docker build -t preedus/marketplace:1.1 .
 
 docker run \
   --name marketplace \
   --rm \
   -e PORT=8080 \
   --publish 8080:8080 \
-  user/marketplace:1.0
+  preedus/marketplace:1.1

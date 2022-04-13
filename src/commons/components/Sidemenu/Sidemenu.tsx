@@ -5,10 +5,33 @@ import CheckboxItem from './CheckboxItem';
  
 
 const Sidemenu = () => {
+
+  const categories = [
+    {name: 'Foundation'},
+    {name: 'Algebra'},
+    {name: 'ML'},
+    {name: 'Optimization'},
+    {name: 'Chemistry'},
+  ]
+  const categories2 = [
+    {name: 'Applications'},
+    {name: 'Learning Assets'},
+    {name: 'Algorithms'},
+  ]
+
   return(<Wrapper>
     <Content>
    
-      <Header>Header</Header>
+      <Header marginBottom='.5rem'>Categories</Header>
+      {[...categories, ...categories2].map((category, index) => (
+        <CheckboxItem 
+          labelText= {category.name} 
+          id = {`category_item_1_${index}`}
+        />
+      ))}
+ 
+   
+      <Header marginTop='1.25rem' marginBottom='.5rem'>Header</Header>
       <CheckboxItem 
         labelText='Filter 1' 
         id = 'item_1'
@@ -23,7 +46,7 @@ const Sidemenu = () => {
   
       {[1,2].map((value, index)=>{
         return <>
-          <Header marginTop='1rem'>Header</Header>
+          <Header marginTop='1.25rem' marginBottom='.5rem'>Header</Header>
               <CheckboxItem 
                 labelText='Filter 1' 
                 id = {`item_${value}_${index}_1`}

@@ -57,7 +57,7 @@ export const CategoryBanner = styled.div`
   flex-wrap: wrap;
   min-height: 6rem;
   background: ${coolGray[20]};
-  justify-content: center;
+  //justify-content: center;
   align-items: center;
   margin-top: 2rem;
 
@@ -72,7 +72,7 @@ export const CategoryBannerItem = styled.div`
   flex-shrink: 0;
   margin: 1.25rem 1.5rem;
   cursor: pointer;
- 
+   
 
 `
 
