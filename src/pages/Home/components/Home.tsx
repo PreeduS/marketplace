@@ -9,6 +9,11 @@ import { useNavigate } from "react-router-dom";
 
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
+import {categories, categories2} from 'src/commons/data/categories'
+
+
+import { buildUrl, getQueryString} from 'src/commons/helpers/qs'
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -24,57 +29,6 @@ const Home = () => {
     return Icon
   }
 
-  const categories = [
-    {name: 'Foundation'},
-    {name: 'Algebra'},
-    {name: 'ML'},
-    {name: 'Optimization'},
-    {name: 'Chemistry'},
-  ]
-  const categories2 = [
-    {
-      name: 'Applications',
-      items: [
-        {
-          title: 'Routing Demo',
-          details: 'Details',
-          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-          disabled: false,
-        },
-        {
-          title: 'Forecasting Demo',
-          details: 'Details',
-          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-          disabled: false,
-        },
-        ...Array.from(Array(4).keys()).map(() => ({
-          title: 'Title',
-          details: 'Details',
-          description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-          disabled: true,
-        }))
-      ]
-
-    },
-    {
-      name: 'Learning Assets',
-      items: Array.from(Array(6).keys()).map(() => ({
-        title: 'Title',
-        details: 'Details',
-        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-        disabled: true,
-      }))
-    },
-    {
-      name: 'Algorithms',
-      items: Array.from(Array(6).keys()).map(() => ({
-        title: 'Title',
-        details: 'Details',
-        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-        disabled: true,
-      }))
-    },
-  ]
 
   return(<Wrapper>
   <AppHeader />
@@ -110,14 +64,25 @@ const Home = () => {
     </Content>
 
     <CategoryBanner>
-    {[...categories, ...categories2].map(category => (
-      <CategoryBannerItem onClick = {() =>  navigate(`/explore`)}> 
-        <IconContainer>
-          {getIcon(0)}
-      </IconContainer>   
-        {category.name}
-      </CategoryBannerItem>
-    ))}
+    {[...categories, ...categories2].map(category => {
+ 
+      const itemId = `category_${category.id}`
+      const filter = {
+        [itemId]: true
+      }
+      const url = buildUrl( 'explore', {filter}, {
+        encodeValuesOnly: false
+      })
+
+      return (
+        <CategoryBannerItem onClick = {() =>  navigate(url)}> 
+          <IconContainer>
+            {getIcon(0)}
+        </IconContainer>   
+          {category.name}
+        </CategoryBannerItem>
+      )
+    })}
 
 
       {Array.from(Array(13).keys()).map((index)=> 

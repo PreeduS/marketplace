@@ -6,31 +6,104 @@ import BoxItem from 'src/commons/components/BoxItem';
 
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
+import { buildUrl, getQueryString} from 'src/commons/helpers/qs'
+import { useLocation, useNavigate} from 'react-router-dom'
+
+import products from 'src/commons/data/products'
+ 
+type Filter = {
+  filter: any
+}
 const Explore = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
+ 
+  const filter: Filter = React.useMemo(
+    () => {
+      const qs = getQueryString(location.search);
+      return {
+       filter: qs.filter || {}
+      };
+    },
+    [location.search]
+  );
+ 
+  const setFilter = (updatedFilter:any) => {
 
+    
+    const url = buildUrl( location.pathname, updatedFilter, {
+      encodeValuesOnly: false
+    })
+    
+
+    navigate(url);
+  }
+
+  const onFilterChangeHandler = (checked: boolean, id: string) => {
+   
+    const filterOptions = {
+      ...filter.filter as any,
+      [id]: checked
+    }
+
+ 
+    if(filterOptions[id] !== true){
+      delete filterOptions[id]
+    }
+   
+ 
+
+    const updatedFilter = {
+      ...filter,
+      filter:{
+        ...filterOptions
+      }
+
+    }
+    setFilter(updatedFilter)
+    
+  }
+
+ 
+
+  const filteredProducts = React.useMemo(() => {
+    if(filter.filter['category_6'] === 'true'){
+      return products.filter(product => product.categoryId === 6)
+    }else if(
+      Object.keys(filter.filter).length > 0
+    ){
+      return products.filter(product => product.categoryId === null).slice(0, 5 )
+
+    }
+    return products
+  },[filter.filter])
+
+ 
   return(<Wrapper>
   <AppHeader />
-  <Sidemenu />
+  <Sidemenu onFilterChange = {onFilterChangeHandler} filter = {filter}/>
     <Content>
   
       <h3>Products </h3>
       <Description>
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
       </Description>
-      <BoxItems>
-      <BoxItem title = 'Routing Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-      <BoxItem title = 'Forecasting Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
 
-        {Array.from(Array(24).keys()).map(()=> 
+
+      <BoxItems>
+
+      {filteredProducts.map(product => {
+        return (
           <BoxItem 
-            title = 'Title' 
-            details = 'Details' 
-            description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
-            disabled
-          />
-        )}
-        
+          title = {product.title} 
+          details = {product.boxItem.details} 
+          description = {product.boxItem.description}
+          disabled = {product.categoryId === null}
+        />
+        )
+      })}
+ 
       </BoxItems>
     </Content>
   </Wrapper>)

@@ -4,21 +4,28 @@ import { Checkbox,  CheckboxOnChangeDefaultVariant } from "carbon-components-rea
 
 type Props = {
   labelText: string
-  id: string
+  id: string,
+  onClick?: (checked: boolean, id: string) => void
+  checked?: boolean
+  disabled?: boolean
 }
 
-const CheckboxItem = ({labelText, id}: Props) => {
+const CheckboxItem = ({labelText, id, onClick, checked = false, disabled}: Props) => {
   const changeHandler: CheckboxOnChangeDefaultVariant   = (checked: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(checked, id, event)
+    if(onClick){
+      onClick(checked, id)
+    }
   }
   return(<Wrapper>
  
       <Checkbox
-            labelText={labelText}
-            id= {id}
-            checked={false}
-            onChange={changeHandler}
-          />
+          labelText={labelText}
+          id= {id}
+          checked={checked}
+          onChange={changeHandler}
+          disabled = {disabled}
+      />
 
 
   </Wrapper>)
