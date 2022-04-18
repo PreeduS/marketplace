@@ -37,7 +37,7 @@ export const IntroBanner = styled.div`
 export const IntroBannerImage = styled.div`
   position: absolute;
   top: 2.25rem;
-  left: 12rem;
+  left: 9rem;
   opacity: 1;
   display: flex;
   width: 9rem;

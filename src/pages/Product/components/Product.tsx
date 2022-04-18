@@ -6,33 +6,38 @@ import { Wrapper, Content, Description, TabsWrapper, /*TabList, TabPanels, TabPa
 import BoxItem from 'src/commons/components/BoxItem';
 
 import { Tabs,   Tab, TabContent,   Button } from 'carbon-components-react';
-  
+import { useParams } from 'react-router-dom'
 import Typography from 'src/commons/components/Typography';
 import Asset from './Asset';
  
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
-const Product = () => {
-   
+import products from 'src/commons/data/products'
 
+const Product = () => {
+  const { id } = useParams();
+
+
+  const product = React.useMemo(()=> products.find(product => product.id === Number(id)), [id])
+ 
   return(<Wrapper>
   <AppHeader />
   <Sidemenu />
     <Content>
 
-      <Typography as = 'h2'>Forecasting Demo </Typography>
+      <Typography as = 'h2'>{product?.title}</Typography>
       <Description>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
-      </Description>
+        {product?.description}
+       </Description>
 
-      {Array.from(Array(5).keys()).map((value)=> 
+      {product?.tags.map((value)=> 
           <Tag
             key = {value}
             type="cool-gray"
             size="sm"
-            title="Clear Filter"
+            
           >
-            {'Tag content'}
+            {value}
           </Tag>
       )}
       <TabsWrapper>
@@ -49,7 +54,8 @@ const Product = () => {
                   Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus
                 </Typography>
                 <Typography as = 'p' marginTop='1rem'>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.              </Typography>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.              
+                </Typography>
               </AssetContent>
 
               <Asset />

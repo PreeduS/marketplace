@@ -7,13 +7,14 @@ import { Tag } from "carbon-components-react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
+  id?: number
   title: React.ReactNode
   details: React.ReactNode
   description: React.ReactNode
   disabled?: boolean
 } 
 
-const BoxItem = ({title, details, description, disabled}: Props) => {
+const BoxItem = ({id, title, details, description, disabled}: Props) => {
   const navigate = useNavigate();
 
   const clickHandler =  React.useMemo(()=>{
@@ -21,10 +22,13 @@ const BoxItem = ({title, details, description, disabled}: Props) => {
       return undefined;
     }
     return () => {
-      navigate(`/product`)
+      if(id !== undefined){
+
+        navigate(`/product/${id}`)
+      }
     }
 
-  }, [disabled, navigate])
+  }, [id, disabled, navigate])
 
   return(<Wrapper disabled = {disabled}>
     <IconContainer>

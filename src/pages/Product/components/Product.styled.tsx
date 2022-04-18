@@ -19,7 +19,7 @@ export const Content = styled.div`
 
 ` 
 
-export const Description = styled.div`
+export const Description = styled.p`
     display: flex;
     margin: 1rem 0;
  

@@ -7,7 +7,7 @@ import BoxItem from 'src/commons/components/BoxItem';
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
 import { buildUrl, getQueryString} from 'src/commons/helpers/qs'
-import { useLocation, useNavigate} from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import products from 'src/commons/data/products'
  
