@@ -4,7 +4,7 @@ import { coolGray } from '@carbon/colors';
 
 
 export const Wrapper = styled.div<{disabled?: boolean}>`
-  width: 14rem;
+  width: 14.5rem;
   min-height: 12.5rem;
   display: flex;
   flex-shrink: 0;
@@ -26,10 +26,26 @@ export const Wrapper = styled.div<{disabled?: boolean}>`
 export const IconContainer = styled.div`
   margin-bottom: .75rem;
 `;
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex:1;
+`;
+
 export const Details = styled.div`
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: nowrap;
+  min-height:1.25rem;
+
+ 
 `;
 export const Description = styled.div`
+ 
   margin-bottom: 1rem;
   text-overflow: ellipsis; 
   overflow: hidden;

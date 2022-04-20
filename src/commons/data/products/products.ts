@@ -8,7 +8,7 @@ const products = [
     categoryId: 6,
     tags: ['Routing', 'Quantum', 'Application'],
     boxItem:{
-      details: 'Details',
+      details: 'Vehicle Routing Optimization',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
 
     },

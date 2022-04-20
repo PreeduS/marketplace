@@ -96,6 +96,7 @@ const Explore = () => {
       {filteredProducts.map(product => {
         return (
           <BoxItem 
+          id = {product.id}
           title = {product.title} 
           details = {product.boxItem.details} 
           description = {product.boxItem.description}

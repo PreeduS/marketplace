@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, IconContainer, Details, Description, TagsContainer } from './BoxItem.styled'
+import { Wrapper, IconContainer, Details, Content, Description, TagsContainer } from './BoxItem.styled'
 import Typography from 'src/commons/components/Typography';
 import { Carbon32 } from '@carbon/icons-react';
 import { Tag } from "carbon-components-react";
@@ -40,25 +40,27 @@ const BoxItem = ({id, title, details, description, disabled}: Props) => {
     <Details>
         {details}
     </Details>
-    <Description>
-        {description}
-    </Description>
-    <TagsContainer>
-      <Tag
-        type="cool-gray"
-        size="sm"
-      >
-        Quantum
-      </Tag>
-      <Tag
-        type="cool-gray"
-        size="sm"
-      >
-        Tag
-      </Tag>
- 
- 
-    </TagsContainer>
+    <Content>
+      <Description>
+          {description}
+      </Description>
+      <TagsContainer>
+        <Tag
+          type="cool-gray"
+          size="sm"
+        >
+          Quantum
+        </Tag>
+        <Tag
+          type="cool-gray"
+          size="sm"
+        >
+          Tag
+        </Tag>
+  
+  
+      </TagsContainer>
+    </Content>
    
   </Wrapper>)
 }
