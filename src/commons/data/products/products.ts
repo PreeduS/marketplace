@@ -1,4 +1,4 @@
-
+import {getContent} from './content'
 
 const products = [
   {
@@ -12,7 +12,7 @@ const products = [
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
 
     },
-    content: {}
+    content: getContent({productId:1})
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const products = [
       details: 'Details',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
     },
-    content: {}
+    content: getContent({productId: 2})
   },
   ...Array.from(Array(24).keys()).map((index)=> ({
     id: index + 3,
@@ -37,7 +37,7 @@ const products = [
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
     
     },
-    content: {} 
+    content: getContent({productId: -1})
   }))
   
 ]

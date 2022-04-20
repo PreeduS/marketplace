@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 import { coolGray } from '@carbon/colors';
-import imagePath from './images/intro.jpeg'
 
-export const Wrapper = styled.div`
+type Props = {
+  imageUrl?: string
+}
+
+export const Wrapper = styled.div<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +16,8 @@ export const Wrapper = styled.div`
   flex-shrink: 0;
   border: 1px solid ${coolGray[20]};
 
-  background: url(${imagePath});
+  background-color: ${coolGray[90]};
+  ${props => props.imageUrl && `background: url(${props.imageUrl});`}
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;

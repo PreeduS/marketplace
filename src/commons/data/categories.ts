@@ -28,18 +28,21 @@ export const categories2 = [
     name: 'Applications',
     items: [
       {
+        id: 1,
         title: 'Routing Demo',
         details: 'Details',
         description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
         disabled: false,
       },
       {
+        id: 2,
         title: 'Forecasting Demo',
         details: 'Details',
         description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
         disabled: false,
       },
       ...Array.from(Array(4).keys()).map(() => ({
+        id: null,
         title: 'Title',
         details: 'Details',
         description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
@@ -52,6 +55,7 @@ export const categories2 = [
     id: 7, 
     name: 'Learning Assets',
     items: Array.from(Array(6).keys()).map(() => ({
+      id: null,
       title: 'Title',
       details: 'Details',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
@@ -62,6 +66,7 @@ export const categories2 = [
     id: 8, 
     name: 'Algorithms',
     items: Array.from(Array(6).keys()).map(() => ({
+      id: null,
       title: 'Title',
       details: 'Details',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',

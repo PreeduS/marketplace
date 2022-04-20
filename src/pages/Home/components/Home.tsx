@@ -95,14 +95,24 @@ const Home = () => {
       )}
     </CategoryBanner>
 
-    {categories2.map(category => (
+    {categories2.map(category => {
+        const itemId = `category_${category.id}`
+        const filter = {
+          [itemId]: true
+        }
+        const url = buildUrl( 'explore', {filter}, {
+          encodeValuesOnly: false
+        })
+  
+      return (
          <Content>
-         <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(`/explore`)}>{category.name}</h4>
+         <h4 style = {{cursor: 'pointer'}} onClick = {() =>  navigate(url)}>{category.name}</h4>
          <BoxItemsInline>
          
 
           {category.items.map(item => {
             return <BoxItem 
+            id = {item.id || undefined}
             title = {item.title} 
             details = {item.details}
             description = {item.description}
@@ -121,7 +131,8 @@ const Home = () => {
            
          </BoxItemsInline>
        </Content> 
-    ))}
+      )
+    })}
 
    
 

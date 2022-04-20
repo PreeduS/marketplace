@@ -1,16 +1,18 @@
 import { Wrapper } from './Asset.styled'
 import Typography from 'src/commons/components/Typography';
 
+type Props = {
+  imageUrl?: string
+  link?: string
+  title?: string
+}
  
-const Asset = () => {
-  const link = 'http://forecasting-demo.hs7svmevr5p.us-south.codeengine.appdomain.cloud/'
+const Asset = ({imageUrl, link, title}:Props) => {
   return <Wrapper
-    //href={link}
-    //target='_blank'
-    onClick = {()=>window.open(link, '_blank')
-  }
+    onClick = {link ? ()=> window.open(link, '_blank') : undefined}
+    imageUrl = {imageUrl}
   >
-    <Typography as = 'h4' style ={{cursor:'pointer'}}>Forecasting Demo </Typography>
+    <Typography as = 'h4' style ={{cursor:'pointer'}}>{title}</Typography>
 
   </Wrapper>
   
