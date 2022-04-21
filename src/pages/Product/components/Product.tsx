@@ -2,10 +2,10 @@ import React from 'react';
 import Sidemenu from './Sidemenu';
 import { Header, HeaderName, Tag,/* Tabs, Tab*/ } from "carbon-components-react";
 //import { Button } from 'carbon-components-react';
-import { Wrapper, Content, Description, TabsWrapper, /*TabList, TabPanels, TabPanel */ BoxItems, AssetWrapper, AssetContent  } from './Product.styled'
+import { Wrapper, Content, Description, TabsWrapper, /*TabList, TabPanels, TabPanel */ BoxItems, AssetWrapper, AssetContent, TabContent  } from './Product.styled'
 import BoxItem from 'src/commons/components/BoxItem';
 
-import { Tabs,   Tab, TabContent,   Button } from 'carbon-components-react';
+import { Tabs,   Tab,  } from 'carbon-components-react';
 import { useParams } from 'react-router-dom'
 import Typography from 'src/commons/components/Typography';
 import Asset from './Asset';
@@ -44,7 +44,8 @@ const Product = () => {
         <Tabs >
           {!!product?.content?.tabs.overview &&          
             <Tab label = 'Overview'>
-              {product?.content?.tabs.overview.primaryDescription}
+              <TabContent>
+
               
               {!!product?.content?.tabs.overview.asset && 
               
@@ -63,23 +64,34 @@ const Product = () => {
               }
               {product?.content?.tabs.overview.secondaryDescription}
             
+              {product?.content?.tabs.overview.primaryDescription}
+              </TabContent>
             </Tab>
           }
 
           {!!product?.content?.tabs.docs &&  
           <Tab label = 'Docs'>
+            <TabContent>
             {product?.content?.tabs.docs.description}
+            
+            </TabContent>
           </Tab>
           }
 
           {!!product?.content?.tabs.info &&  
           <Tab label = 'Info'>
-            {product?.content?.tabs.info.description}
+            <TabContent>
+            
+                {product?.content?.tabs.info.description}
+            </TabContent>
           </Tab>
           }
           {!!product?.content?.tabs.pricing &&  
           <Tab label = 'Pricing'>
+            <TabContent>
+                
             {product?.content?.tabs.pricing.description}
+              </TabContent>
           </Tab>
           }
         </Tabs>

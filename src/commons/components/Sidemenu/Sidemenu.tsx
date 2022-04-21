@@ -32,21 +32,24 @@ const Sidemenu = ({onFilterChange, filter}: Props) => {
         )
       })}
  
-   
-      <Header marginTop='1.25rem' marginBottom='.5rem'>Header</Header>
-      <CheckboxItem 
-        labelText='Filter 1' 
-        id = 'item_1'
-      />
-  
-      <CheckboxItem 
-        labelText='Filter 2' 
-        id = 'item_2'
-      />
+      {
+        /*
+        <Header marginTop='1.25rem' marginBottom='.5rem'>Header</Header>
+        <CheckboxItem 
+          labelText='Filter 1' 
+          id = 'item_1'
+        />
+    
+        <CheckboxItem 
+          labelText='Filter 2' 
+          id = 'item_2'
+        />
+        */
+      }
   
 
   
-      {[1,2].map((value, index)=>{
+      {false && [1,2].map((value, index)=>{
         return <>
           <Header marginTop='1.25rem' marginBottom='.5rem'>Header</Header>
               <CheckboxItem 

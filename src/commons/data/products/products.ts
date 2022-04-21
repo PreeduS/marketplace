@@ -22,7 +22,7 @@ const products = [
     tags: ['Forecasting', 'Quantum', 'Application'],
     boxItem:{
       details: 'IBM Quantum',
-      description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+      description: 'Learn about the role of quantum computing in Intelligent Workflows for demand forecasting',
       tags: ['Forecasting', 'Quantum', 'Application'],
 
     },

@@ -71,4 +71,8 @@ export const AssetContent = styled.div`
   margin-right: 2rem;
 
 `
+export const TabContent = styled.div`
+  margin-top: 1rem;
+
+`
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carbon16, IbmCloud16, Cube16, Bee16, IbmSecurity16 } from '@carbon/icons-react';
  
-import { Wrapper, Content, IntroBanner, IntroBannerImage, CategoryBanner, CategoryBannerItem,  Description, BoxItemsInline, IconContainer } from './Home.styled'
+import { Wrapper, Content, IntroBanner, IntroBannerImage, IntroBannerContent, CategoryBanner, CategoryBannerItem,  Description, BoxItemsInline, IconContainer } from './Home.styled'
 import BoxItem from 'src/commons/components/BoxItem';
 import Typography from 'src/commons/components/Typography';
 
@@ -12,7 +12,7 @@ import AppHeader from 'src/commons/components/Layout/AppHeader';
 import {categories, featuredProductsCategories, categories2} from 'src/commons/data/categories'
 
 
-import { buildUrl, getQueryString} from 'src/commons/helpers/qs'
+import { buildUrl } from 'src/commons/helpers/qs'
 
 const Home = () => {
   const navigate = useNavigate();
@@ -34,6 +34,8 @@ const Home = () => {
   <AppHeader />
  
     <IntroBanner>
+      <IntroBannerContent>
+
       <IntroBannerImage />
       <Typography as = 'h2' marginBottom='1rem'>
         Et harum quidem rerum facilis est et expedita distinctio.
@@ -42,6 +44,7 @@ const Home = () => {
       Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.
         
       </Typography>
+      </IntroBannerContent>
 
     </IntroBanner>
 

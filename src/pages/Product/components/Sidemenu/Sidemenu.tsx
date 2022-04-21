@@ -2,26 +2,36 @@ import React from 'react';
 import { Wrapper, Content, Header } from './Sidemenu.styled'
 
 import CheckboxItem from './ListItem';
- 
+import { Carbon16, IbmCloud16, Cube16, Bee16, IbmSecurity16 } from '@carbon/icons-react';
+
 
 const Sidemenu = () => {
   return(<Wrapper>
     <Content>
-   
-      <Header>Header</Header>
+  
+ 
+      <Header>Status</Header>
       <CheckboxItem 
-        labelText='Filter 1' 
+        labelText='Active' 
         id = 'item_1'
       />
-  
+   
+      
+ 
+      <Header marginTop = '2rem'>Categories</Header>
+    
+   
       <CheckboxItem 
-        labelText='Filter 2' 
-        id = 'item_2'
+        labelText='Applications' 
+        id = 'item_1'
+        icon = {<Cube16 color='#0066cc' />}
       />
-  
+   
+      
+   
 
   
-      {[1,2].map((value, index)=>{
+      {false && [1,2].map((value, index)=>{
         return <>
           <Header marginTop='1rem'>Header</Header>
               <CheckboxItem 

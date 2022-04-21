@@ -1,26 +1,21 @@
 import React from 'react';
 import { Wrapper, Label } from './ListItem.styled'
-import { ChevronDown16, ChevronUp16, CheckmarkOutline32, CheckmarkOutline20, CheckmarkOutline16 } from "@carbon/icons-react";
-import { Checkbox, CheckboxOnChangeDataVariant, CheckboxOnChangeDefaultVariant } from "carbon-components-react";
-
-type ChangeHandlerEvent = 
-{evt: React.ChangeEvent<HTMLInputElement>, data: { checked: boolean, id: string }}// | 
-//{checked: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>}
-
-
+import { CheckmarkOutline16 } from "@carbon/icons-react";
+ 
+ 
 type Props = {
   labelText: string
   id: string
+  icon?: React.ReactNode
 }
 
-const ListItem = ({labelText, id}:Props) => {
-  const changeHandler: CheckboxOnChangeDefaultVariant   = (checked: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(checked, id, event)
-  }
+const ListItem = ({labelText, id, icon}:Props) => {
+
   return(<Wrapper>
-      <CheckmarkOutline16 color='#0066cc' />
+      {icon !== undefined ?  icon:   <CheckmarkOutline16 color='#0066cc' />
+}
       <Label>
-        ListItem
+        {labelText}
       </Label>
 
   </Wrapper>)

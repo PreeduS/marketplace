@@ -9,19 +9,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   flex: 1;
   padding-top: 3rem;
- 
- 
-  //border-right: 1px solid ${coolGray[20]};
 `;
-
 
 export const Content = styled.div`
   padding: 2rem 3rem;
- 
 
 `
 export const IntroBanner = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 14rem;
@@ -30,14 +24,27 @@ export const IntroBanner = styled.div`
   align-items: center;
   margin-top: 3rem;
 
-  padding: 3.5rem 20rem;
+  //padding: 3.5rem 20rem;
+ 
+
+`
+export const IntroBannerContent = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 14rem;
+  background: ${coolGray[20]};
+  align-items: center;
+  
+  margin: 0 14rem;
+  padding-top: 3rem;
  
 
 `
 export const IntroBannerImage = styled.div`
   position: absolute;
   top: 2.25rem;
-  left: 9rem;
+  left: -13rem;
   opacity: 1;
   display: flex;
   width: 9rem;
