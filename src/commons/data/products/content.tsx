@@ -95,7 +95,7 @@ const content = [
     tabs: {
       overview: {
         primaryDescription: <>
-          <Typography as = 'h5' marginBottom='1rem'>On The Road To A Quantum Future</Typography>
+          <Typography as = 'h5' marginBottom='1rem' marginTop = '2.5rem'>On The Road To A Quantum Future</Typography>
 
           <Typography as = 'p' marginBottom='.5rem'>
             Routing optimization is a critical problem for many industries such as distribution, communications, electronics, automotive and aerospace.
@@ -237,7 +237,7 @@ const content = [
     tabs: {
       overview: {
         primaryDescription: <>
-            <Typography as = 'h5' marginBottom='1rem'>Business Value</Typography>
+            <Typography as = 'h5' marginBottom='1rem' marginTop='2.5rem'>Business Value</Typography>
             <Typography as = 'p' marginBottom = '1rem'>
               Many industries, such as electronics, financial services, manufacturing, energy, logistics, and many more, rely on demand forecasting for critical business decision making. However, achieving accurate forecasting remains a significant challenge. A good example is demand forecasting.
             </Typography>

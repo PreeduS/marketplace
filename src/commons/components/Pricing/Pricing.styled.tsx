@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   margin-bottom: 1.5rem;
  
   border: 1px solid ${coolGray[20]};
-  cursor: pointer;
+ 
 
  
   
