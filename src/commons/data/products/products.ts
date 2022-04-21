@@ -4,13 +4,13 @@ const products = [
   {
     id: 1,
     title: 'Routing Demo',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
+    description: 'Vehicle Routing Optimization',
     categoryId: 6,
     tags: ['Routing', 'Quantum', 'Application'],
     boxItem:{
-      details: 'Vehicle Routing Optimization',
-      description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-
+      details: 'IBM Quantum',
+      description: 'Routing optimization is a critical problem for many industries such as distribution, communications, electronics, automotive and aerospace.',
+      tags: ['Routing', 'Quantum', 'Application'],
     },
     content: getContent({productId:1})
   },
@@ -21,8 +21,10 @@ const products = [
     categoryId: 6,
     tags: ['Forecasting', 'Quantum', 'Application'],
     boxItem:{
-      details: 'Details',
+      details: 'IBM Quantum',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
+      tags: ['Forecasting', 'Quantum', 'Application'],
+
     },
     content: getContent({productId: 2})
   },
@@ -33,7 +35,7 @@ const products = [
     categoryId: null,
     tags: [],
     boxItem:{
-      details: 'Details',
+      details: 'IBM Quantum',
       description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
     
     },
@@ -41,6 +43,11 @@ const products = [
   }))
   
 ]
+
+export const getProducts = ({id}:{id: number}) => {
+  const result = products.find(c => c.id === id)
+  return result
+}
 
 
 export default products

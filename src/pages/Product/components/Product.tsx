@@ -42,35 +42,46 @@ const Product = () => {
       )}
       <TabsWrapper>
         <Tabs >
-          <Tab label = 'Overview'>
-            {product?.content?.tabs.overview.primaryDescription}
-          
-          {!!product?.content?.tabs.overview.asset && 
-          
-            <AssetWrapper>
-              <AssetContent>
-                {product?.content?.tabs.overview.asset.description}
-              </AssetContent>
+          {!!product?.content?.tabs.overview &&          
+            <Tab label = 'Overview'>
+              {product?.content?.tabs.overview.primaryDescription}
+              
+              {!!product?.content?.tabs.overview.asset && 
+              
+                <AssetWrapper>
+                  <AssetContent>
+                    {product?.content?.tabs.overview.asset.description}
+                  </AssetContent>
 
-              <Asset 
-                imageUrl = {product?.content?.tabs.overview.asset.imageUrl} 
-                link = {product?.content?.tabs.overview.asset.link} 
-                title = {product?.content?.tabs.overview.asset.title} 
-              />
+                  <Asset 
+                    imageUrl = {product?.content?.tabs.overview.asset.imageUrl} 
+                    link = {product?.content?.tabs.overview.asset.link} 
+                    title = {product?.content?.tabs.overview.asset.title} 
+                  />
 
-            </AssetWrapper>
+                </AssetWrapper>
+              }
+              {product?.content?.tabs.overview.secondaryDescription}
+            
+            </Tab>
           }
-            {product?.content?.tabs.overview.secondaryDescription}
-           
-          </Tab>
+
+          {!!product?.content?.tabs.docs &&  
           <Tab label = 'Docs'>
-
-          {product?.content?.tabs.docs.description}
-
+            {product?.content?.tabs.docs.description}
           </Tab>
+          }
+
+          {!!product?.content?.tabs.info &&  
           <Tab label = 'Info'>
-          {product?.content?.tabs.info.description}
+            {product?.content?.tabs.info.description}
           </Tab>
+          }
+          {!!product?.content?.tabs.pricing &&  
+          <Tab label = 'Pricing'>
+            {product?.content?.tabs.pricing.description}
+          </Tab>
+          }
         </Tabs>
       </TabsWrapper>
 
@@ -80,6 +91,7 @@ const Product = () => {
     </Content>
   </Wrapper>)
 }
+
 
 export default Product;
 

@@ -12,7 +12,7 @@ const Asset = ({imageUrl, link, title}:Props) => {
     onClick = {link ? ()=> window.open(link, '_blank') : undefined}
     imageUrl = {imageUrl}
   >
-    <Typography as = 'h4' style ={{cursor:'pointer'}}>{title}</Typography>
+    <Typography as = 'h5' style ={{cursor:'pointer'}}>{title}</Typography>
 
   </Wrapper>
   

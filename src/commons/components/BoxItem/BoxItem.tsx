@@ -51,13 +51,7 @@ const BoxItem = ({id, title, details, description, disabled}: Props) => {
         >
           Quantum
         </Tag>
-        <Tag
-          type="cool-gray"
-          size="sm"
-        >
-          Tag
-        </Tag>
-  
+      
   
       </TagsContainer>
     </Content>

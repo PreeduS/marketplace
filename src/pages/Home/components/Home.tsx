@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
-import {categories, categories2} from 'src/commons/data/categories'
+import {categories, featuredProductsCategories, categories2} from 'src/commons/data/categories'
 
 
 import { buildUrl, getQueryString} from 'src/commons/helpers/qs'
@@ -48,17 +48,23 @@ const Home = () => {
     <Content>
       <h4>Featured products </h4>
       <BoxItemsInline>
-        <BoxItem id = {1} title = 'Routing Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
-        <BoxItem id = {2} title = 'Forecasting Demo' details = 'Details' description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'/>
+ 
 
-        {Array.from(Array(4).keys()).map(()=> 
-          <BoxItem 
-            title = 'Title' 
-            details = 'Details' 
-            description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
-            disabled
-          />
-        )}
+        {featuredProductsCategories.items.map(item => {
+
+
+         
+              return <BoxItem 
+              id = {item?.id || undefined}
+              title = {item?.title} 
+              details = {item?.details}
+              description = {item?.description}
+              disabled = {item?.disabled}
+            />
+     
+    
+
+        })}
         
       </BoxItemsInline>
     </Content>
@@ -112,22 +118,15 @@ const Home = () => {
 
           {category.items.map(item => {
             return <BoxItem 
-            id = {item.id || undefined}
-            title = {item.title} 
-            details = {item.details}
-            description = {item.description}
-            disabled = {item.disabled}
+            id = {item?.id || undefined}
+            title = {item?.title} 
+            details = {item?.details}
+            description = {item?.description}
+            disabled = {item?.disabled}
          />
           })}
 
-           {/*Array.from(Array(6).keys()).map(()=> 
-             <BoxItem 
-                title = 'Title' 
-                details = 'Details' 
-                description = 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates'
-                disabled
-             />
-          )*/}
+   
            
          </BoxItemsInline>
        </Content> 
