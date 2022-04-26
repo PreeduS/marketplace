@@ -70,7 +70,6 @@ export const CategoryBannerItem = styled.div`
   flex-shrink: 0;
   margin: 1.25rem 1.5rem;
   cursor: pointer;
- 
 `;
 
 export const IconContainer = styled.div`

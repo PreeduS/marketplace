@@ -53,7 +53,7 @@ const Product = () => {
             {!!product?.content?.tabs.overview && (
               <Tab label='Overview'>
                 <TabContent>
-                {product?.content?.tabs.overview.primaryDescription}
+                  {product?.content?.tabs.overview.primaryDescription}
                   {!!product?.content?.tabs.overview.asset && (
                     <AssetWrapper>
                       <AssetContent>
@@ -70,8 +70,6 @@ const Product = () => {
                     </AssetWrapper>
                   )}
                   {product?.content?.tabs.overview.secondaryDescription}
-
-                
                 </TabContent>
               </Tab>
             )}

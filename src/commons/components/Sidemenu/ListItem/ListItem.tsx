@@ -22,9 +22,7 @@ const ListItem = () => {
     checked: boolean,
     id: string,
     event: React.ChangeEvent<HTMLInputElement>
-  ) => {
- 
-  };
+  ) => {};
   return (
     <Wrapper>
       <CheckmarkOutline32 />

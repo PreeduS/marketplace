@@ -57,9 +57,7 @@ const Explore = () => {
       return products.filter(product => product.categoryId === 50);
     } else if (filter.filter['category_5'] === 'true') {
       return products.filter(product => product.categoryId === 5);
-    }
-    
-    else if (Object.keys(filter.filter).length > 0) {
+    } else if (Object.keys(filter.filter).length > 0) {
       return products
         .filter(product => product.categoryId === null)
         .slice(0, 5);

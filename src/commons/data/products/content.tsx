@@ -6,7 +6,7 @@ import Pricing from 'src/commons/components/Pricing';
 import forecastingImagePath from './images/intro.jpeg';
 import routingImagePath from './images/Hero_v2.png';
 import { UnorderedList, ListItem } from 'carbon-components-react';
-import chemistry from './content/Chemistry'
+import chemistry from './content/Chemistry';
 const content = [
   {
     productId: -1,

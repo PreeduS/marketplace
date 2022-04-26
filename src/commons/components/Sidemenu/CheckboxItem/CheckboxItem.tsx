@@ -25,7 +25,6 @@ const CheckboxItem = ({
     id: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
- 
     if (onClick) {
       onClick(checked, id);
     }

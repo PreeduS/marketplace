@@ -57,10 +57,11 @@ const Home = () => {
         <IntroBannerContent>
           <IntroBannerImage />
           <Typography as='h2' marginBottom='1rem'>
-          QITS Asset Library
-           </Typography>
+            QITS Asset Library
+          </Typography>
           <Typography as='h4'>
-          Quantum computing enabled solutions, applications and proprietary algorithm libraries
+            Quantum computing enabled solutions, applications and proprietary
+            algorithm libraries
           </Typography>
         </IntroBannerContent>
       </IntroBanner>

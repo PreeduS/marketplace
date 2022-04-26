@@ -33,13 +33,14 @@ const products = [
   {
     id: 3,
     title: 'Chemistry',
-    description: 'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
+    description:
+      'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
     categoryId: 5,
     tags: ['Chemistry', 'Quantum', 'Application'],
     boxItem: {
       details: 'IBM Quantum',
       description:
-      'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
+        'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
       tags: ['Chemistry', 'Quantum', 'Application'],
     },
     content: getContent({ productId: 3 }),
