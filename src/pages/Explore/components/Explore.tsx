@@ -55,6 +55,8 @@ const Explore = () => {
   const filteredProducts = React.useMemo(() => {
     if (filter.filter['category_50'] === 'true') {
       return products.filter(product => product.categoryId === 50);
+    } else if (filter.filter['category_3'] === 'true') {
+      return products.filter(product => product.categoryId === 3);
     } else if (filter.filter['category_5'] === 'true') {
       return products.filter(product => product.categoryId === 5);
     } else if (Object.keys(filter.filter).length > 0) {

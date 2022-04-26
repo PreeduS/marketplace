@@ -14,7 +14,7 @@ export const featuredProductsCategories = {
   id: null,
   name: 'Featured products',
   items: [
-    ...[1, 2, 3]
+    ...[1, 2, 3, 4]
       .map(id => {
         const product = getProducts({ id });
         if (product) {

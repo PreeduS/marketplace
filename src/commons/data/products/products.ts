@@ -36,14 +36,29 @@ const products = [
     description:
       'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
     categoryId: 5,
-    tags: ['Chemistry', 'Quantum', 'Application'],
+    tags: ['Chemistry', 'Quantum'],
     boxItem: {
       details: 'IBM Quantum',
       description:
         'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
-      tags: ['Chemistry', 'Quantum', 'Application'],
+      tags: ['Chemistry', 'Quantum'],
     },
     content: getContent({ productId: 3 }),
+  },
+  {
+    id: 4,
+    title: 'Quantum machine learning',
+    description:
+      'An advanced course that takes a deep look at algorithms, and how to apply hybrid quantum-classical models to specific machine learning problems.',
+    categoryId: 3,
+    tags: ['Machine Learning', 'Quantum'],
+    boxItem: {
+      details: 'IBM Quantum',
+      description:
+        'An advanced course that takes a deep look at algorithms, and how to apply hybrid quantum-classical models to specific machine learning problems.',
+      tags: ['Machine Learning', 'Quantum'],
+    },
+    content: getContent({ productId: 4 }),
   },
   ...Array.from(Array(24).keys()).map(index => ({
     id: index + 3,

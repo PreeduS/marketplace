@@ -7,6 +7,8 @@ import forecastingImagePath from './images/intro.jpeg';
 import routingImagePath from './images/Hero_v2.png';
 import { UnorderedList, ListItem } from 'carbon-components-react';
 import chemistry from './content/Chemistry';
+import quantumMachineLearning from './content/QuantumMachineLearning';
+
 const content = [
   {
     productId: -1,
@@ -446,6 +448,7 @@ const content = [
     },
   },
   chemistry,
+  quantumMachineLearning,
 ];
 
 export const getContent = ({ productId }: { productId: number }) => {
