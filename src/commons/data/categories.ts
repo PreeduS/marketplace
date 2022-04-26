@@ -3,16 +3,18 @@ import { getProducts } from './products';
 export const categories = [
   { id: 1, name: 'Foundation' },
   { id: 2, name: 'Algebra' },
-  { id: 3, name: 'ML' },
+  { id: 3, name: 'Machine Learning' },
   { id: 4, name: 'Optimization' },
   { id: 5, name: 'Chemistry' },
+  { id: 6, name: 'Quantum solutions' },
+  { id: 7, name: 'Education' },
 ];
 
 export const featuredProductsCategories = {
   id: null,
   name: 'Featured products',
   items: [
-    ...[1, 2]
+    ...[1, 2, 3]
       .map(id => {
         const product = getProducts({ id });
         if (product) {
@@ -27,7 +29,7 @@ export const featuredProductsCategories = {
         return null;
       })
       .filter(product => product !== null),
-    ...Array.from(Array(4).keys()).map(() => ({
+    ...Array.from(Array(3).keys()).map(() => ({
       id: null,
       title: 'Product',
       details: 'IBM Quantum',
@@ -40,7 +42,7 @@ export const featuredProductsCategories = {
 
 export const categories2 = [
   {
-    id: 6,
+    id: 50,
     name: 'Applications',
     items: [
       ...[1, 2]
@@ -70,7 +72,7 @@ export const categories2 = [
     ],
   },
   {
-    id: 7,
+    id: 51,
     name: 'Learning Assets',
     items: Array.from(Array(6).keys()).map(() => ({
       id: null,
@@ -82,7 +84,7 @@ export const categories2 = [
     })),
   },
   {
-    id: 8,
+    id: 52,
     name: 'Algorithms',
     items: Array.from(Array(6).keys()).map(() => ({
       id: null,

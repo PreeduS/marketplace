@@ -57,11 +57,10 @@ const Home = () => {
         <IntroBannerContent>
           <IntroBannerImage />
           <Typography as='h2' marginBottom='1rem'>
-            Et harum quidem rerum facilis est et expedita distinctio.
-          </Typography>
+          QITS Asset Library
+           </Typography>
           <Typography as='h4'>
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit.
+          Quantum computing enabled solutions, applications and proprietary algorithm libraries
           </Typography>
         </IntroBannerContent>
       </IntroBanner>
@@ -105,12 +104,12 @@ const Home = () => {
           );
         })}
 
-        {Array.from(Array(13).keys()).map(index => (
+        {/*Array.from(Array(13).keys()).map(index => (
           <CategoryBannerItem onClick={() => navigate(`/explore`)}>
             <IconContainer>{getIcon(index)}</IconContainer>
             Category Item
           </CategoryBannerItem>
-        ))}
+        ))*/}
       </CategoryBanner>
 
       {categories2.map(category => {

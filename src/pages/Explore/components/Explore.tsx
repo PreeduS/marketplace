@@ -53,9 +53,13 @@ const Explore = () => {
   };
 
   const filteredProducts = React.useMemo(() => {
-    if (filter.filter['category_6'] === 'true') {
-      return products.filter(product => product.categoryId === 6);
-    } else if (Object.keys(filter.filter).length > 0) {
+    if (filter.filter['category_50'] === 'true') {
+      return products.filter(product => product.categoryId === 50);
+    } else if (filter.filter['category_5'] === 'true') {
+      return products.filter(product => product.categoryId === 5);
+    }
+    
+    else if (Object.keys(filter.filter).length > 0) {
       return products
         .filter(product => product.categoryId === null)
         .slice(0, 5);

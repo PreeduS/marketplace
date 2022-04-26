@@ -65,10 +65,12 @@ export const CategoryBanner = styled.div`
 
 export const CategoryBannerItem = styled.div`
   display: flex;
-  width: 10rem;
+  min-width: 12rem;
+  width: calc((100vw - 6rem) / 5 - 3.25rem);
   flex-shrink: 0;
   margin: 1.25rem 1.5rem;
   cursor: pointer;
+ 
 `;
 
 export const IconContainer = styled.div`

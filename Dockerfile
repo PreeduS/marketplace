@@ -1,11 +1,8 @@
 FROM node:13.13.0-alpine3.10 as build
 
 WORKDIR /home/node/frontend
-#WORKDIR /tmp/frontend
- 
- 
-COPY . ./
 
+COPY . ./
 
 RUN npm ci
 RUN npm run build
@@ -17,13 +14,10 @@ RUN npm run build
 FROM nginxinc/nginx-unprivileged:latest as release
 
 
-#COPY --from=build /tmp/frontend/build/. /usr/share/nginx/html
 COPY --from=build /home/node/frontend/build/. /usr/share/nginx/html
 
-#COPY ./conf.d/default.conf /etc/nginx/conf.d/default.conf
 COPY ./conf.d/default.conf /tmp/default.conf 
 
-#
 COPY ./docker-entrypoint.sh /
 
 

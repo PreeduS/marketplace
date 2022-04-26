@@ -23,7 +23,7 @@ const ListItem = () => {
     id: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    console.log(checked, id, event);
+ 
   };
   return (
     <Wrapper>

@@ -5,7 +5,7 @@ const products = [
     id: 1,
     title: 'Routing Demo',
     description: 'Vehicle Routing Optimization',
-    categoryId: 6,
+    categoryId: 50,
     tags: ['Routing', 'Quantum', 'Application'],
     boxItem: {
       details: 'IBM Quantum',
@@ -20,7 +20,7 @@ const products = [
     title: 'Forecasting Demo',
     description:
       'Learn about the role of quantum computing in Intelligent Workflows for demand forecasting. See how quantum and classical methods differ and how they complement each other and work together. Experience a quantum algorithm applied to a business problem so that you can envision how you might apply quantum computing.',
-    categoryId: 6,
+    categoryId: 50,
     tags: ['Forecasting', 'Quantum', 'Application'],
     boxItem: {
       details: 'IBM Quantum',
@@ -29,6 +29,20 @@ const products = [
       tags: ['Forecasting', 'Quantum', 'Application'],
     },
     content: getContent({ productId: 2 }),
+  },
+  {
+    id: 3,
+    title: 'Chemistry',
+    description: 'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
+    categoryId: 5,
+    tags: ['Chemistry', 'Quantum', 'Application'],
+    boxItem: {
+      details: 'IBM Quantum',
+      description:
+      'An advanced course that focuses on the Variational Quantum Eigensolver algorithm, and how to apply it to quantum chemistry problems.',
+      tags: ['Chemistry', 'Quantum', 'Application'],
+    },
+    content: getContent({ productId: 3 }),
   },
   ...Array.from(Array(24).keys()).map(index => ({
     id: index + 3,
