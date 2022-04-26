@@ -1,8 +1,8 @@
 import React from 'react';
-import Explore from 'src/pages/Explore/components/Explore'
+import Explore from 'src/pages/Explore/components/Explore';
 
 const ExploreContainer = () => {
-  return <Explore />
-}
+  return <Explore />;
+};
 
 export default ExploreContainer;

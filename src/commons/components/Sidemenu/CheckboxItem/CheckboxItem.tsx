@@ -1,34 +1,46 @@
 import React from 'react';
-import { Wrapper } from './CheckboxItem.styled'
-import { Checkbox,  CheckboxOnChangeDefaultVariant } from "carbon-components-react";
+import { Wrapper } from './CheckboxItem.styled';
+import {
+  Checkbox,
+  CheckboxOnChangeDefaultVariant,
+} from 'carbon-components-react';
 
 type Props = {
-  labelText: string
-  id: string,
-  onClick?: (checked: boolean, id: string) => void
-  checked?: boolean
-  disabled?: boolean
-}
+  labelText: string;
+  id: string;
+  onClick?: (checked: boolean, id: string) => void;
+  checked?: boolean;
+  disabled?: boolean;
+};
 
-const CheckboxItem = ({labelText, id, onClick, checked = false, disabled}: Props) => {
-  const changeHandler: CheckboxOnChangeDefaultVariant   = (checked: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(checked, id, event)
-    if(onClick){
-      onClick(checked, id)
+const CheckboxItem = ({
+  labelText,
+  id,
+  onClick,
+  checked = false,
+  disabled,
+}: Props) => {
+  const changeHandler: CheckboxOnChangeDefaultVariant = (
+    checked: boolean,
+    id: string,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    console.log(checked, id, event);
+    if (onClick) {
+      onClick(checked, id);
     }
-  }
-  return(<Wrapper>
- 
+  };
+  return (
+    <Wrapper>
       <Checkbox
-          labelText={labelText}
-          id= {id}
-          checked={checked}
-          onChange={changeHandler}
-          disabled = {disabled}
+        labelText={labelText}
+        id={id}
+        checked={checked}
+        onChange={changeHandler}
+        disabled={disabled}
       />
-
-
-  </Wrapper>)
-}
+    </Wrapper>
+  );
+};
 
 export default CheckboxItem;

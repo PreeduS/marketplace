@@ -1,1 +1,1 @@
-export * from './qs'
+export * from './qs';

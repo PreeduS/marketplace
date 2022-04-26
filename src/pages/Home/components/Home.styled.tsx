@@ -1,8 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 import { coolGray } from '@carbon/colors';
-import imagePath from './images/1200px-Qiskit-Logo.svg.png'
-
+import imagePath from './images/1200px-Qiskit-Logo.svg.png';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,8 +12,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   padding: 2rem 3rem;
-
-`
+`;
 export const IntroBanner = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,9 +23,7 @@ export const IntroBanner = styled.div`
   margin-top: 3rem;
 
   //padding: 3.5rem 20rem;
- 
-
-`
+`;
 export const IntroBannerContent = styled.div`
   position: relative;
   display: flex;
@@ -35,12 +31,10 @@ export const IntroBannerContent = styled.div`
   height: 14rem;
   background: ${coolGray[20]};
   align-items: center;
-  
+
   margin: 0 14rem;
   padding-top: 3rem;
- 
-
-`
+`;
 export const IntroBannerImage = styled.div`
   position: absolute;
   top: 2.25rem;
@@ -56,9 +50,7 @@ export const IntroBannerImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
- 
-
-`
+`;
 export const CategoryBanner = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -69,9 +61,7 @@ export const CategoryBanner = styled.div`
   margin-top: 2rem;
 
   padding: 1.5rem 3rem;
- 
-
-`
+`;
 
 export const CategoryBannerItem = styled.div`
   display: flex;
@@ -79,28 +69,19 @@ export const CategoryBannerItem = styled.div`
   flex-shrink: 0;
   margin: 1.25rem 1.5rem;
   cursor: pointer;
-   
-
-`
+`;
 
 export const IconContainer = styled.div`
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   color: #0066cc;
 `;
- 
 
 export const Description = styled.p`
-    display: flex;
-    margin: 1rem 0 ;
- 
-
-`
+  display: flex;
+  margin: 1rem 0;
+`;
 export const BoxItemsInline = styled.div`
-    display: flex;
-    overflow: hidden;
-    margin-top: 2rem;
- 
-
-`
-
-
+  display: flex;
+  overflow: hidden;
+  margin-top: 2rem;
+`;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./index.scss";
+import './index.scss';
 import App from './App';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
-import GlobalStyle from './globalStyle'
+import GlobalStyle from './globalStyle';
 
 ReactDOM.render(
   <React.StrictMode>
-     <GlobalStyle />
+    <GlobalStyle />
     <Router />
   </React.StrictMode>,
   document.getElementById('root')

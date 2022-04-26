@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 import { coolGray } from '@carbon/colors';
 
 export default createGlobalStyle`
@@ -30,4 +30,4 @@ code {
 }
 
 
-`
+`;

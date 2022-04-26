@@ -1,1 +1,1 @@
-export { default } from './BoxLink'
+export { default } from './BoxLink';

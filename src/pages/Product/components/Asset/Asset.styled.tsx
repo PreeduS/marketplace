@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { coolGray } from '@carbon/colors';
 
 type Props = {
-  imageUrl?: string
-}
+  imageUrl?: string;
+};
 
 export const Wrapper = styled.div<Props>`
   display: flex;
@@ -26,4 +26,4 @@ export const Wrapper = styled.div<Props>`
   color: white;
   //box-shadow: inset 0 0 20px ${coolGray[10]};
   //border-radius: 10px;
-`
+`;

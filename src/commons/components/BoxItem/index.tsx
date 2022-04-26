@@ -1,1 +1,1 @@
-export { default } from './BoxItem'
+export { default } from './BoxItem';

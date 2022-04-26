@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 import { coolGray } from '@carbon/colors';
-
 
 export const Wrapper = styled.div`
   position: relative;
@@ -15,10 +14,8 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   //position:sticky;
   //top: 4rem;
- 
 `;
 
-
-export const Header = styled.h4<{marginTop?: string}>`
+export const Header = styled.h4<{ marginTop?: string }>`
   margin-top: ${props => props.marginTop || 0};
-`
+`;
