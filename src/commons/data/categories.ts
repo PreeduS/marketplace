@@ -29,7 +29,7 @@ export const featuredProductsCategories = {
         return null;
       })
       .filter(product => product !== null),
-    ...Array.from(Array(3).keys()).map(() => ({
+    ...Array.from(Array(2).keys()).map(() => ({
       id: null,
       title: 'Product',
       details: 'IBM Quantum',
