@@ -3,11 +3,8 @@ import { Wrapper, Content, Header } from './Sidemenu.styled';
 
 import CheckboxItem from './ListItem';
 import {
-  Carbon16,
-  IbmCloud16,
-  Cube16,
-  Bee16,
-  IbmSecurity16,
+ 
+  Cube16, 
 } from '@carbon/icons-react';
 
 const Sidemenu = () => {

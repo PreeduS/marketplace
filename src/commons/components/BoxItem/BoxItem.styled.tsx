@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { coolGray } from '@carbon/colors';
 
 export const Wrapper = styled.div<{ disabled?: boolean }>`
-  width: 14.5rem;
+  //width: 14.5rem;
+  width: 17rem;
   min-height: 12.5rem;
+  min-height: 19.5rem;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -48,8 +50,16 @@ export const Description = styled.div`
   overflow: hidden;
   line-height: 1.2rem;
   display: -webkit-box;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 `;
-export const TagsContainer = styled.div``;
+export const TagsContainer = styled.div`
+  height: 4rem;
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+ 
+`;

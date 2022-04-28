@@ -44,8 +44,8 @@ const Product = () => {
         <Description>{product?.description}</Description>
 
         {product?.tags.map(value => (
-          <Tag key={value} type='cool-gray' size='sm'>
-            {value}
+          <Tag key={value.id} type='cool-gray' size='sm'>
+            {value.label}
           </Tag>
         ))}
         <TabsWrapper>

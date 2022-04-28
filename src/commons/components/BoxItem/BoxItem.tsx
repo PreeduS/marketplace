@@ -19,9 +19,10 @@ type Props = {
   details: React.ReactNode;
   description: React.ReactNode;
   disabled?: boolean;
+  tags?: {id: number, label: string}[];
 };
 
-const BoxItem = ({ id, title, details, description, disabled }: Props) => {
+const BoxItem = ({ id, title, details, description, disabled, tags }: Props) => {
   const navigate = useNavigate();
 
   const clickHandler = React.useMemo(() => {
@@ -45,14 +46,22 @@ const BoxItem = ({ id, title, details, description, disabled }: Props) => {
         {title}
       </Typography>
       <Details>{details}</Details>
-      <Content>
-        <Description>{description}</Description>
+      <Description>{description}</Description>
+     
         <TagsContainer>
-          <Tag type='cool-gray' size='sm'>
+          {/*<Tag type='cool-gray' size='sm'>
             Quantum
+          </Tag>*/}
+          <div>
+            
+          {tags && tags.map(value => (
+          <Tag key={value.id} type='cool-gray' size='sm'>
+            {value.label}
           </Tag>
+        ))}
+          </div>
         </TagsContainer>
-      </Content>
+      
     </Wrapper>
   );
 };

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Typography, {Props} from 'src/commons/components/Typography';
 
 import { coolGray } from '@carbon/colors';
-import imagePath from './images/1200px-Qiskit-Logo.svg.png';
+import imagePath from './images/diffraction.png';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,35 +15,49 @@ export const Content = styled.div`
   padding: 2rem 3rem;
 `;
 export const IntroBanner = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 14rem;
+  display: flex; 
+  //height: 14rem;
   background: ${coolGray[20]};
   //justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  //margin-top: 3rem;
 
   //padding: 3.5rem 20rem;
+  background: #161616;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 25rem;
+`;
+export const IntroTitle = styled(Typography)<Props>`
+  font-size: 3rem;
+`;
+export const IntroDescription = styled(Typography)<Props>`
+  font-size: 1.1rem;
+  //font-weight: 300;
 `;
 export const IntroBannerContent = styled.div`
-  position: relative;
+  
   display: flex;
   flex-direction: column;
-  height: 14rem;
-  background: ${coolGray[20]};
-  align-items: center;
+ // height: 14rem;
+  height: 100%;
+ 
+//  align-items: center;
 
-  margin: 0 14rem;
-  padding-top: 3rem;
+  //margin: 0 14rem;
+  //padding-top: 3rem;
+  color: white;
+  justify-content: space-between;
+  padding: 1.5rem 0;
 `;
 export const IntroBannerImage = styled.div`
-  position: absolute;
-  top: 2.25rem;
-  left: -13rem;
-  opacity: 1;
+  //position: absolute;
+  //top: 2.25rem;
+  //left: -13rem;
+ 
   display: flex;
-  width: 9rem;
-  height: 9rem;
+  width: calc(1.35 * 25rem);
+  height: 25rem;
   flex-shrink: 0;
   flex-grow: 0;
 

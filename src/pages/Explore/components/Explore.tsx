@@ -52,7 +52,24 @@ const Explore = () => {
     setFilter(updatedFilter);
   };
 
+
+
+
   const filteredProducts = React.useMemo(() => {
+
+    const selectedCategories = Object.keys(filter.filter).reduce((acc: string[], key: string) => {
+      const value = filter.filter[key]
+      const isSelected = value === 'true'
+      if(isSelected){
+        return [...acc, key]
+      }
+      return [...acc]
+    },[])
+    console.log('filter.filter ', filter.filter)
+    
+    console.log('filter.filter selectedCategories' , selectedCategories)
+
+
     if (filter.filter['category_50'] === 'true') {
       return products.filter(product => product.categoryId === 50);
     } else if (filter.filter['category_3'] === 'true') {
@@ -88,6 +105,7 @@ const Explore = () => {
                 details={product.boxItem.details}
                 description={product.boxItem.description}
                 disabled={product.categoryId === null}
+                tags = {product.boxItem.tags}
               />
             );
           })}

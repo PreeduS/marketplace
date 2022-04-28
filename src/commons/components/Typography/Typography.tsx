@@ -1,6 +1,6 @@
 import { Wrapper } from './Typography.styled';
 
-type Props = {
+export type Props = {
   children: React.ReactNode;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   marginTop?: string;

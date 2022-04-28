@@ -12,6 +12,8 @@ import {
   Content,
   IntroBanner,
   IntroBannerImage,
+  IntroTitle,
+  IntroDescription,
   IntroBannerContent,
   CategoryBanner,
   CategoryBannerItem,
@@ -55,15 +57,17 @@ const Home = () => {
 
       <IntroBanner>
         <IntroBannerContent>
-          <IntroBannerImage />
-          <Typography as='h2' marginBottom='1rem'>
-            QITS Asset Library
-          </Typography>
-          <Typography as='h4'>
-            Quantum computing enabled solutions, applications and proprietary
+          <IntroTitle as='h1' marginBottom='1rem'>
+          Quantum Accelerator <br />Asset Library
+
+          </IntroTitle>
+          <IntroDescription as='p'>
+            Quantum computing enabled solutions, <br />applications and proprietary
             algorithm libraries
-          </Typography>
+          </IntroDescription>
         </IntroBannerContent>
+        <IntroBannerImage />
+
       </IntroBanner>
 
       <Content>
@@ -77,6 +81,7 @@ const Home = () => {
                 details={item?.details}
                 description={item?.description}
                 disabled={item?.disabled}
+                tags = {item?.tags}
               />
             );
           })}
@@ -140,6 +145,8 @@ const Home = () => {
                     details={item?.details}
                     description={item?.description}
                     disabled={item?.disabled}
+                    tags = {item?.tags}
+
                   />
                 );
               })}
