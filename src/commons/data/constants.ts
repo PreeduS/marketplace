@@ -20,7 +20,7 @@ export const assetType  = {
   },
 }
 
-
+type AssetTypeKeys = keyof typeof assetType;
 
 export const tag = {
 
@@ -44,12 +44,14 @@ export const tag = {
   },
  
 }
+type TagTypeKeys = keyof typeof tag;
 
- 
-export const filters = [
-  assetType,
-  tag,
-]
+
+export const filters = {
+  assetType: (Object.keys(assetType) as AssetTypeKeys[]).map((key) => assetType[key]  ),
+  tag: (Object.keys(tag) as TagTypeKeys[]).map((key) => tag[key]  ),
+  
+}
 
 
 /*

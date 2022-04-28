@@ -3,6 +3,7 @@ import { Wrapper, Content, Header } from './Sidemenu.styled';
 
 import CheckboxItem from './CheckboxItem';
 import { categories, categories2 } from 'src/commons/data/categories';
+import {assetType, tag, filters} from 'src/commons/data/constants'
 
 type Props = {
   onFilterChange: (checked: boolean, id: string) => void;
@@ -14,13 +15,34 @@ const Sidemenu = ({ onFilterChange, filter }: Props) => {
     <Wrapper>
       <Content>
         <Header marginBottom='.5rem'>Categories</Header>
-        {[...categories, ...categories2].map((category, index) => {
+        {
+        //[...categories/*, ...categories2*/]
+        
+        filters.assetType.map((category, index) => {
           //const itemId = `category_${category.name.toLowerCase()}_${index}`
           const itemId = `category_${category.id}`;
 
           return (
             <CheckboxItem
-              labelText={category.name}
+              labelText={category.label}
+              //id = {`category_item_1_${index}`}
+              id={itemId}
+              onClick={onFilterChange}
+              checked={filter.filter[itemId] === 'true'}
+            />
+          );
+        })}
+
+      <Header marginTop='1.5rem' marginBottom='.5rem'>Tags</Header>
+        {
+   
+        filters.tag.map((category, index) => {
+          //const itemId = `category_${category.name.toLowerCase()}_${index}`
+          const itemId = `category_${category.id}`;
+
+          return (
+            <CheckboxItem
+              labelText={category.label}
               //id = {`category_item_1_${index}`}
               id={itemId}
               onClick={onFilterChange}

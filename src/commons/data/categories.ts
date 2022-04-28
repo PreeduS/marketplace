@@ -4,6 +4,13 @@ import {assetType, tag} from 'src/commons/data/constants'
 
 
 export const categories = [
+  assetType.algorithms,
+  assetType.application,
+  assetType.educationCourses,
+  assetType.thirdPartyAssets,
+].map(category => ({id: category.id, name: category.label}))
+
+/*[
   { id: 1, name: 'Foundation' },
   { id: 2, name: 'Algebra' },
   { id: 3, name: 'Machine Learning' },
@@ -11,7 +18,7 @@ export const categories = [
   { id: 5, name: 'Chemistry' },
   { id: 6, name: 'Quantum solutions' },
   { id: 7, name: 'Education' },
-];
+];*/
 
 export const featuredProductsCategories = {
   id: null,

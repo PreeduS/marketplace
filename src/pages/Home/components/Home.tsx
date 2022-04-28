@@ -89,7 +89,7 @@ const Home = () => {
       </Content>
 
       <CategoryBanner>
-        {[...categories, ...categories2].map(category => {
+        {[...categories/*, ...categories2*/].map(category => {
           const itemId = `category_${category.id}`;
           const filter = {
             [itemId]: true,
