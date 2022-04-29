@@ -1,4 +1,6 @@
-FROM node:13.13.0-alpine3.10 as build
+# FROM node:13.13.0-alpine3.10 as build
+# FROM node:16.15.0-alpine3.15 as build
+FROM node:14.19.1-alpine as build
 
 WORKDIR /home/node/frontend
 

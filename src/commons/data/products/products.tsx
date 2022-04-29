@@ -32,26 +32,7 @@ const getMockAlgorithm = ({id, title}:{id:number, title: string}) => {
 
 
 const products = [
-  {
-    id: 1,
-    title: 'Vehicle Routing',
-    description: 'Vehicle Routing Optimization',
-    categoryId: assetType.application.id,
-    //tags: ['Routing', 'Quantum', 'Application'],
-    tags: [tag.optimization],
-    headerButton: {
-      link: 'https://vrp-demo-ny.hs7svmevr5p.us-south.codeengine.appdomain.cloud',
-      label: 'Launch'
-    },
-    boxItem: {
-      details: 'IBM Quantum',
-      description:
-        'Routing optimization is a critical problem for many industries such as distribution, communications, electronics, automotive and aerospace.',
-      //tags: ['Routing', 'Quantum', 'Application'],
-      tags: [tag.optimization],
-    },
-    content: getContent({ productId: 1 }),
-  },
+
   {
     id: 2,
     title: 'Time series forecasting',
@@ -72,6 +53,26 @@ const products = [
       tags: [tag.quantumMachineLearning, tag.optimization],
     },
     content: getContent({ productId: 2 }),
+  },
+  {
+    id: 1,
+    title: 'Vehicle Routing',
+    description: 'Vehicle Routing Optimization',
+    categoryId: assetType.application.id,
+    //tags: ['Routing', 'Quantum', 'Application'],
+    tags: [tag.optimization],
+    headerButton: {
+      link: 'https://vrp-demo-ny.hs7svmevr5p.us-south.codeengine.appdomain.cloud',
+      label: 'Launch'
+    },
+    boxItem: {
+      details: 'IBM Quantum',
+      description:
+        'Routing optimization is a critical problem for many industries such as distribution, communications, electronics, automotive and aerospace.',
+      //tags: ['Routing', 'Quantum', 'Application'],
+      tags: [tag.optimization],
+    },
+    content: getContent({ productId: 1 }),
   },
   {
     id: 3,
