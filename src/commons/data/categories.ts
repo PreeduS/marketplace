@@ -192,7 +192,7 @@ export const categories2 = [
     items: [
       
       ...Array.from(Array(3).keys()).map((index) => ({
-      id: null,
+      id: index,
       title: `Product ${index + 1}`,
       details: 'IBM Quantum',
       description:

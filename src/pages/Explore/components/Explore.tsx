@@ -78,12 +78,12 @@ const Explore = () => {
       }
       return [...acc]
     },[])
-    console.log('filter.filter ', filter.filter, products)
+ 
 
     let filteredProduct = products;
     if(filter.filter['assetType']){
       const selectedIds = Object.keys(filter.filter['assetType']).filter(key => filter.filter['assetType'][key] === 'true').map(key => Number(key.split('_')[1]))
-      console.log('selectedIds ',selectedIds)
+      
 
       filteredProduct = filteredProduct.filter(p => p.categoryId !== null && selectedIds.includes(p.categoryId ))
 
@@ -137,6 +137,7 @@ const Explore = () => {
             return (
               <BoxItem
                 id={product.id}
+                key={product.id}
                 title={product.title}
                 details={product.boxItem.details}
                 description={product.boxItem.description}

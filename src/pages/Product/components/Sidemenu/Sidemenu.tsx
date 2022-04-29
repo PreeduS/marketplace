@@ -7,7 +7,15 @@ import {
   Cube16, 
 } from '@carbon/icons-react';
 
-const Sidemenu = () => {
+type Props = {
+  assetType?: {
+    id:number, 
+    label: string
+  }
+}
+
+
+const Sidemenu = ({assetType}:Props) => {
   return (
     <Wrapper>
       <Content>
@@ -16,11 +24,11 @@ const Sidemenu = () => {
 
         <Header marginTop='2rem'>Categories</Header>
 
-        <CheckboxItem
-          labelText='Applications'
+        {assetType?.label && <CheckboxItem
+          labelText={ assetType?.label || '' }
           id='item_1'
           icon={<Cube16 color='#0066cc' />}
-        />
+        />}
 
         {false &&
           [1, 2].map((value, index) => {

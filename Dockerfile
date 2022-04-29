@@ -16,6 +16,8 @@ FROM nginxinc/nginx-unprivileged:latest as release
 
 COPY --from=build /home/node/frontend/build/. /usr/share/nginx/html
 
+COPY ./download/. /usr/share/nginx/html/download
+
 COPY ./conf.d/default.conf /tmp/default.conf 
 
 COPY ./docker-entrypoint.sh /

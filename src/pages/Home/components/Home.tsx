@@ -74,9 +74,11 @@ const Home = () => {
         <h4>Spotlight </h4>
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
+         
             return (
               <BoxItem
                 id={item?.id || undefined}
+                key={item?.id}
                 title={item?.title}
                 details={item?.details}
                 description={item?.description}
@@ -103,9 +105,8 @@ const Home = () => {
               encodeValuesOnly: false,
             }
           );
-
           return (
-            <CategoryBannerItem onClick={() => navigate(url)}>
+            <CategoryBannerItem onClick={() => navigate(url)} key = {category.id}>
               <IconContainer>{getIcon(0)}</IconContainer>
               {category.name}
             </CategoryBannerItem>
@@ -137,7 +138,7 @@ const Home = () => {
         );
 
         return (
-          <Content>
+          <Content key = {category.id}>
             <h4 style={{ cursor: 'pointer' }} onClick={() => navigate(url)}>
               {category.name}
             </h4>
@@ -146,6 +147,7 @@ const Home = () => {
                 return (
                   <BoxItem
                     id={item?.id || undefined}
+                    key={item?.id }
                     title={item?.title}
                     details={item?.details}
                     description={item?.description}

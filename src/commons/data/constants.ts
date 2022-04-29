@@ -20,7 +20,7 @@ export const assetType  = {
   },
 }
 
-type AssetTypeKeys = keyof typeof assetType;
+export type AssetTypeKeys = keyof typeof assetType;
 
 export const tag = {
 
@@ -44,7 +44,7 @@ export const tag = {
   },
  
 }
-type TagTypeKeys = keyof typeof tag;
+export type TagTypeKeys = keyof typeof tag;
 
 
 export const filters = {

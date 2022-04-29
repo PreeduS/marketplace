@@ -82,7 +82,37 @@ popular schemes that demonstrates how variational circuits can be used to solve 
       ),
     },
     info: null,
-    instructions: getMockInstructions() ,
+    //instructions: getMockInstructions() ,
+    instructions: {
+      description: <>
+
+
+
+ 
+
+<Typography as = 'p' marginBottom= '0'>
+  1. Download the package zip file and extract it into a local directory.
+
+  </Typography>
+  
+  <Typography as = 'p' marginBottom= '0'>
+  2. cd into the root directory where setup.py is located
+  </Typography>
+  <Typography as = 'p' marginBottom= '0'>
+  3. Enter: python setup.py install
+  </Typography>
+
+  <Typography as = 'p' marginBottom= '0'>
+  4. Execute: python -m pip install --upgrade setuptools
+  </Typography>
+  <Typography as = 'p' marginBottom= '0'>
+  5. Import the library by using import VQLS
+  </Typography>
+
+
+
+      </>
+    } ,
 
     pricing: {
       description: (

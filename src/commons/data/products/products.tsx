@@ -15,7 +15,7 @@ const getMockAlgorithm = ({id, title}:{id:number, title: string}) => {
      
       tags: [tag.algebra],
       headerButton:{
-        link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+2021QA1+2021-Q3/about',
+        link: null,
         label: 'Download'
       },
       boxItem: {
@@ -168,7 +168,7 @@ const products = [
    
     tags: [tag.algebra],
     headerButton:{
-      link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+2021QA1+2021-Q3/about',
+      link: `${window.location.origin}/download/VQLS.zip`,
       label: 'Download'
     },
     boxItem: {

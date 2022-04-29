@@ -6,3 +6,4 @@ docker run \
   -e PORT=8080 \
   --publish 8080:8080 \
   preedus/marketplace:1.1
+

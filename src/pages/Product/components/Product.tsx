@@ -32,6 +32,9 @@ import AppHeader from 'src/commons/components/Layout/AppHeader';
 
 import products from 'src/commons/data/products';
 
+import {assetType, AssetTypeKeys} from 'src/commons/data/constants'
+
+
 const Product = () => {
   const { id } = useParams();
 
@@ -40,10 +43,23 @@ const Product = () => {
     [id]
   );
 
+  //const asset = product?.categoryId ? Object.keys(assetType).filter(key => assetType[key]?.id === product?.categoryId) : null
+  const getAssetType = () => {
+    const key =  product?.categoryId ? (Object.keys(assetType) as AssetTypeKeys[]).find((key) => assetType[key]?.id ===  product?.categoryId) : null
+
+    if(key){
+      return assetType[key]
+    }
+  }
+  
+  
+
+  
+  
   return (
     <Wrapper>
       <AppHeader />
-      <Sidemenu />
+      <Sidemenu assetType = {getAssetType()}/>
       <Content>
         <HeaderContainer>
           <HeaderDetails>
@@ -54,7 +70,7 @@ const Product = () => {
             product?.headerButton && 
             <HeaderButton>
             <ButtonContainer>
-                <Button onClick = {()=>  window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
+                <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
             </ButtonContainer>
           </HeaderButton>
        
