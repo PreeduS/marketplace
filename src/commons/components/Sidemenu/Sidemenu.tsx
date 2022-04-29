@@ -6,11 +6,12 @@ import { categories, categories2 } from 'src/commons/data/categories';
 import {assetType, tag, filters} from 'src/commons/data/constants'
 
 type Props = {
-  onFilterChange: (checked: boolean, id: string) => void;
+  onFilterChange: (section: string, checked: boolean, id: string | number) => void;
   filter: any;
 };
 
 const Sidemenu = ({ onFilterChange, filter }: Props) => {
+ 
   return (
     <Wrapper>
       <Content>
@@ -20,15 +21,20 @@ const Sidemenu = ({ onFilterChange, filter }: Props) => {
         
         filters.assetType.map((category, index) => {
           //const itemId = `category_${category.name.toLowerCase()}_${index}`
-          const itemId = `category_${category.id}`;
-
+          const itemId = `assetType_${category.id}`;
+     
           return (
             <CheckboxItem
+              key = {`assetType_${category.id}`}
               labelText={category.label}
               //id = {`category_item_1_${index}`}
-              id={itemId}
-              onClick={onFilterChange}
-              checked={filter.filter[itemId] === 'true'}
+              //id={itemId}
+              id={`assetType_${category.id}`}
+              onClick={ 
+                (checked, id) =>  onFilterChange('assetType', checked, id)
+                //filterChangeHandler('assetType')
+              }
+              checked={filter.filter['assetType']?.[itemId] === 'true'}
             />
           );
         })}
@@ -38,15 +44,20 @@ const Sidemenu = ({ onFilterChange, filter }: Props) => {
    
         filters.tag.map((category, index) => {
           //const itemId = `category_${category.name.toLowerCase()}_${index}`
-          const itemId = `category_${category.id}`;
+          const itemId = `tag_${category.id}`;
 
           return (
             <CheckboxItem
+              key = {`tag_${category.id}`}
               labelText={category.label}
               //id = {`category_item_1_${index}`}
-              id={itemId}
-              onClick={onFilterChange}
-              checked={filter.filter[itemId] === 'true'}
+              //id={itemId}
+              id={`tag_${category.id}`}
+              onClick={ 
+                //filterChangeHandler('tag')
+                (checked, id) => onFilterChange('tag', checked, id) 
+              }
+              checked={filter.filter['tag']?.[itemId] === 'true'}
             />
           );
         })}

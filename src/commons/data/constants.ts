@@ -4,7 +4,7 @@ export const assetType  = {
 
   educationCourses: {
     id: 1,
-    label: 'Education courses'
+    label: 'Education'
   },
   algorithms: {
     id: 2,
@@ -16,7 +16,7 @@ export const assetType  = {
   },
   thirdPartyAssets: {
     id: 4,
-    label: '3rd party assets'
+    label: 'Partners?'
   },
 }
 

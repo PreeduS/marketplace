@@ -15,8 +15,13 @@ import {
   AssetWrapper,
   AssetContent,
   TabContent,
+  HeaderContainer,
+  HeaderDetails,
+  HeaderButton,
+  ButtonContainer,
 } from './Product.styled';
 import BoxItem from 'src/commons/components/BoxItem';
+import { Button } from 'carbon-components-react';
 
 import { Tabs, Tab } from 'carbon-components-react';
 import { useParams } from 'react-router-dom';
@@ -40,14 +45,31 @@ const Product = () => {
       <AppHeader />
       <Sidemenu />
       <Content>
-        <Typography as='h2'>{product?.title}</Typography>
-        <Description>{product?.description}</Description>
+        <HeaderContainer>
+          <HeaderDetails>
+           <Typography as='h2'>{product?.title}</Typography>
+            <Description>{product?.description}</Description>
+          </HeaderDetails>
+          {
+            product?.headerButton && 
+            <HeaderButton>
+            <ButtonContainer>
+                <Button onClick = {()=>  window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
+            </ButtonContainer>
+          </HeaderButton>
+       
+          }
+
+        </HeaderContainer>
+
+          <div>
 
         {product?.tags.map(value => (
           <Tag key={value.id} type='cool-gray' size='sm'>
             {value.label}
           </Tag>
         ))}
+          </div>
         <TabsWrapper>
           <Tabs>
             {!!product?.content?.tabs.overview && (
@@ -75,22 +97,29 @@ const Product = () => {
             )}
 
             {!!product?.content?.tabs.docs && (
-              <Tab label='Docs'>
+              <Tab label='Documentation'>
                 <TabContent>
                   {product?.content?.tabs.docs.description}
                 </TabContent>
               </Tab>
             )}
 
-            {!!product?.content?.tabs.info && (
+            {!!product?.content?.tabs.instructions && (
+              <Tab label='Instructions'>
+                <TabContent>
+                  {product?.content?.tabs.instructions.description}
+                </TabContent>
+              </Tab>
+            )}
+            {/*!!product?.content?.tabs.info && (
               <Tab label='Info'>
                 <TabContent>
                   {product?.content?.tabs.info.description}
                 </TabContent>
               </Tab>
-            )}
+            )*/}
             {!!product?.content?.tabs.pricing && (
-              <Tab label='Pricing'>
+              <Tab label='Entitlement'>
                 <TabContent>
                   {product?.content?.tabs.pricing.description}
                 </TabContent>

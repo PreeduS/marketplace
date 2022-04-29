@@ -1,12 +1,13 @@
-import Typography from 'src/commons/components/Typography';
-import { UnorderedList, ListItem } from 'carbon-components-react';
+
+import Typography from 'src/commons/components/Typography'; 
 import BoxLink from 'src/commons/components/BoxLink';
 import Pricing from 'src/commons/components/Pricing';
 
 import getMockInstructions from 'src/commons/data/getMockInstructions';
 
+
 const content = {
-  productId: 3,
+  productId: 5,
   tabs: {
     overview: {
       primaryDescription: (
@@ -15,11 +16,9 @@ const content = {
             About this course
           </Typography>
           <Typography as='p' marginBottom='2.5rem'>
-            Designed for computational scientists, this course explores
-            implementing the Variational Quantum Eigensolver (VQE) in quantum
-            chemistry. Learn about the essential components of VQE, and how to
-            apply the algorithm to calculate the ground state energy of a
-            hydrogen molecule.
+          Designed by IBM Quantum experts, this course covers the essentials of quantum computing and applications for business. Learn about this new computing paradigm, how it works, and its potential to address incredibly complex business problems. Complete the course to earn your IBM Quantum Business Foundations badge.
+
+    
           </Typography>
         </>
       ),
@@ -27,31 +26,34 @@ const content = {
       secondaryDescription: (
         <>
           <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-            Prerequisites
+          Privacy statement
+
           </Typography>
 
           <Typography as='p' marginBottom='.5rem'>
-            To succeed in this course, you should ideally first complete the
-            Quantum technical foundations course or understand these
-            prerequisites.
+          NOTICE: IBM leverages the services of Credly, a 3rd party data processor authorized by IBM and located in the United States, to assist in the administration of the IBM Digital Badge program. In order to issue you an IBM Digital Badge, your personal information (name, email address, and badge earned) will be shared with Credly.
           </Typography>
+ 
+          <Typography as='p' marginBottom='.5rem'>
+          You will receive an email notification from Credly with instructions for claiming the badge. Your personal information is used to issue your badge and for program reporting and operational purposes. It will be handled in a manner consistent with IBM privacy practices. The IBM Privacy Statement can be viewed here:{' '}
+          <a
+              href='https://www.ibm.com/privacy'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Read IBM's full privacy statement.
+            </a>
+</Typography>
+ 
 
-          <UnorderedList nested>
-            <ListItem>
-              Basic linear algebra: Solve systems of equations with matrices,
-              eigenvalues and eigenvectors, linear transformations, and tensor
-              products.
-            </ListItem>
-            <ListItem>
-              Python: Write and maintain reliable code and familiarity with
-              Numpy or data-science packages.
-            </ListItem>
-            <ListItem>
-              Basic concepts in quantum mechanics: Dirac notation, wavefunction,
-              Hamiltonian, Fock space, Hilbert space, second quantization,
-              symmetry groups, and fermionic operators.
-            </ListItem>
-          </UnorderedList>
+          <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
+          Prerequisites
+          </Typography>
+          <Typography as='p' marginBottom='1rem'>
+          There are no prerequisites for this course.
+
+
+          </Typography>
 
           <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
             Technical requirements
@@ -61,10 +63,9 @@ const content = {
           </Typography>
 
           <Typography as='p' marginBottom='.5rem'>
-            The Open edX platform works best with current versions of Chrome and
-            Firefox. See our{' '}
+          This learning platform works best with current versions of Google Chrome and Firefox. See our{' '}
             <a
-              href='https://edx.readthedocs.io/projects/open-edx-learner-guide/en/latest/front_matter/browsers.html'
+              href='https://edx.readthedocs.io/projects/open-edx-building-and-running-a-course/en/open-release-juniper.master/front_matter/browsers.html?%20support'
               target='_blank'
               rel='noreferrer'
             >
@@ -91,6 +92,7 @@ const content = {
     },
     info: null,
     instructions: getMockInstructions() ,
+
     pricing: {
       description: (
         <>

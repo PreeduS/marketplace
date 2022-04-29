@@ -2,6 +2,10 @@ import Typography from 'src/commons/components/Typography';
 import { UnorderedList, ListItem } from 'carbon-components-react';
 import BoxLink from 'src/commons/components/BoxLink';
 import Pricing from 'src/commons/components/Pricing';
+
+import getMockInstructions from 'src/commons/data/getMockInstructions';
+
+
 const content = {
   productId: 4,
   tabs: {
@@ -103,6 +107,8 @@ const content = {
       ),
     },
     info: null,
+    instructions: getMockInstructions() ,
+
     pricing: {
       description: (
         <>

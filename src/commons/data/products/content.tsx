@@ -8,6 +8,12 @@ import routingImagePath from './images/Hero_v2.png';
 import { UnorderedList, ListItem } from 'carbon-components-react';
 import chemistry from './content/Chemistry';
 import quantumMachineLearning from './content/QuantumMachineLearning';
+import quantumBusinessFoundations from './content/QuantumBusinessFoundations';
+import quantumTechnicalFoundations from './content/QuantumTechnicalFoundations';
+import vqls from './content/VQLS';
+
+
+import getMockInstructions from 'src/commons/data/getMockInstructions';
 
 const content = [
   {
@@ -17,7 +23,7 @@ const content = [
         primaryDescription: (
           <>
             <Typography as='h5' marginTop='2rem' marginBottom='1rem'>
-              Title
+            Lorem ipsum
             </Typography>
             <Typography as='p' marginBottom='2.5rem'>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -29,17 +35,18 @@ const content = [
             </Typography>
           </>
         ),
-        asset: {},
+        asset: null,
         secondaryDescription: (
           <>
             <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-              Title
+            Lorem ipsum
             </Typography>
             <p>
               Ut enim ad minima veniam, quis nostrum exercitationem ullam
               corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
               consequatur
             </p>
+            {false &&
             <BoxItems>
               <BoxItem
                 title='title'
@@ -57,9 +64,10 @@ const content = [
                 description='descriptions'
               />
             </BoxItems>
+            }
 
             <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-              Title
+            Lorem ipsum
             </Typography>
             <p>
               Temporibus autem quibusdam et aut officiis debitis aut rerum
@@ -78,7 +86,7 @@ const content = [
         description: (
           <>
             <Typography as='h5' marginTop='2rem' marginBottom='1rem'>
-              Title
+            Lorem ipsum
             </Typography>
 
             <Typography as='p' marginBottom='1rem'>
@@ -106,6 +114,7 @@ const content = [
           </>
         ),
       },
+      /*
       info: {
         description: (
           <>
@@ -153,8 +162,20 @@ const content = [
           </>
         ),
       },
+      */
+      info: null as any,
+      instructions: getMockInstructions() ,
+
       pricing: {
-        description: null,
+        description: (
+          <>
+            <div style={{ display: 'flex' }}>
+              <Pricing type='Free trial' title='Basic Plan' price={null} />
+              <Pricing type='Monthly' title='Premium Plan' price='1,200' />
+              <Pricing type='Annual' title='Premium Plan' price='11,400' />
+            </div>
+          </>
+        ),
       },
     },
   },
@@ -195,7 +216,7 @@ const content = [
           </>
         ),
         asset: {
-          title: 'Routing Demo',
+          title: 'Vehicle Routing',
           imageUrl: routingImagePath,
           link: 'https://vrp-demo-ny.hs7svmevr5p.us-south.codeengine.appdomain.cloud',
           description: (
@@ -308,7 +329,8 @@ const content = [
           </>
         ),
       },
-      info: null,
+      info: null ,
+      instructions: getMockInstructions() ,
       pricing: {
         description: (
           <>
@@ -348,7 +370,7 @@ const content = [
           </>
         ),
         asset: {
-          title: 'Forecasting Demo',
+          title: 'Time series forecasting',
           imageUrl: forecastingImagePath,
           link: 'http://forecasting-demo.hs7svmevr5p.us-south.codeengine.appdomain.cloud/',
           description: (
@@ -433,7 +455,8 @@ const content = [
           </>
         ),
       },
-      info: null,
+      info: null ,
+      instructions: getMockInstructions() ,
       pricing: {
         description: (
           <>
@@ -449,6 +472,9 @@ const content = [
   },
   chemistry,
   quantumMachineLearning,
+  quantumBusinessFoundations,
+  quantumTechnicalFoundations,
+  vqls,
 ];
 
 export const getContent = ({ productId }: { productId: number }) => {

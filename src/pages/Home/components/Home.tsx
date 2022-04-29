@@ -71,7 +71,7 @@ const Home = () => {
       </IntroBanner>
 
       <Content>
-        <h4>Featured products </h4>
+        <h4>Spotlight </h4>
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
             return (
@@ -90,9 +90,11 @@ const Home = () => {
 
       <CategoryBanner>
         {[...categories/*, ...categories2*/].map(category => {
-          const itemId = `category_${category.id}`;
+          const itemId = `assetType_${category.id}`;
           const filter = {
-            [itemId]: true,
+            assetType:{
+              [itemId]: true,
+            }
           };
           const url = buildUrl(
             'explore',
@@ -119,9 +121,12 @@ const Home = () => {
       </CategoryBanner>
 
       {categories2.map(category => {
-        const itemId = `category_${category.id}`;
+        const itemId = `assetType_${category.id}`;
         const filter = {
-          [itemId]: true,
+          assetType:{
+
+            [itemId]: true,
+          }
         };
         const url = buildUrl(
           'explore',

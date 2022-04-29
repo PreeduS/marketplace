@@ -1,12 +1,14 @@
-import Typography from 'src/commons/components/Typography';
-import { UnorderedList, ListItem } from 'carbon-components-react';
+
+import Typography from 'src/commons/components/Typography'; 
 import BoxLink from 'src/commons/components/BoxLink';
 import Pricing from 'src/commons/components/Pricing';
+import { UnorderedList, ListItem } from 'carbon-components-react';
 
 import getMockInstructions from 'src/commons/data/getMockInstructions';
 
+
 const content = {
-  productId: 3,
+  productId: 6,
   tabs: {
     overview: {
       primaryDescription: (
@@ -14,44 +16,62 @@ const content = {
           <Typography as='h5' marginBottom='1rem'>
             About this course
           </Typography>
+          <Typography as='p' marginBottom='.5rem'>
+          This course is right for you if you have a strong STEM background, for example a data scientist, computational scientist, or industry specialist.
+
+
+    
+          </Typography>
           <Typography as='p' marginBottom='2.5rem'>
-            Designed for computational scientists, this course explores
-            implementing the Variational Quantum Eigensolver (VQE) in quantum
-            chemistry. Learn about the essential components of VQE, and how to
-            apply the algorithm to calculate the ground state energy of a
-            hydrogen molecule.
+          Guided by IBM Quantum computing experts, you will learn the fundamentals of quantum computing. This foundation gives you the necessary skills, terminology, and concepts required for success in the more advanced courses.
+
+
+
+    
           </Typography>
         </>
       ),
       asset: null,
       secondaryDescription: (
         <>
+           
+
           <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-            Prerequisites
+          Prerequisites
           </Typography>
-
           <Typography as='p' marginBottom='.5rem'>
-            To succeed in this course, you should ideally first complete the
-            Quantum technical foundations course or understand these
-            prerequisites.
-          </Typography>
+          To succeed in this course, you should understand these prerequisites. We provide opportunities to increase your knowledge about topics before each module.
 
-          <UnorderedList nested>
+ 
+
+</Typography>
+<UnorderedList nested>
             <ListItem>
-              Basic linear algebra: Solve systems of equations with matrices,
-              eigenvalues and eigenvectors, linear transformations, and tensor
-              products.
+         
+            Basic linear algebra: Solve systems of equations with matrices, eigenvalues and eigenvectors, and linear transformations. We will cover tensor products.
+
             </ListItem>
             <ListItem>
-              Python: Write and maintain reliable code and familiarity with
-              Numpy or data-science packages.
+            Trigonometry and complex numbers: Understand the unit circle and how to translate complex numbers to polar coordinates to calculate phases.
+
             </ListItem>
             <ListItem>
-              Basic concepts in quantum mechanics: Dirac notation, wavefunction,
-              Hamiltonian, Fock space, Hilbert space, second quantization,
-              symmetry groups, and fermionic operators.
+            Python: Write and maintain reliable code and familiarity with Numpy or data-science packages.
+
+            </ListItem>
+            <ListItem>
+            Statistics and probability: Comprehend probability and other stochastic notions.
+
+            </ListItem>
+            <ListItem>
+            Complexity theory and the limitations of classical computers: Understand scaling laws and categorizing problems such as P versus NP problems.
+
             </ListItem>
           </UnorderedList>
+
+
+
+
 
           <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
             Technical requirements
@@ -61,10 +81,9 @@ const content = {
           </Typography>
 
           <Typography as='p' marginBottom='.5rem'>
-            The Open edX platform works best with current versions of Chrome and
-            Firefox. See our{' '}
+          This learning platform works best with current versions of Google Chrome and Firefox. See our{' '}
             <a
-              href='https://edx.readthedocs.io/projects/open-edx-learner-guide/en/latest/front_matter/browsers.html'
+              href='https://edx.readthedocs.io/projects/open-edx-building-and-running-a-course/en/open-release-juniper.master/front_matter/browsers.html?%20support'
               target='_blank'
               rel='noreferrer'
             >
@@ -91,6 +110,7 @@ const content = {
     },
     info: null,
     instructions: getMockInstructions() ,
+
     pricing: {
       description: (
         <>
