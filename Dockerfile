@@ -6,8 +6,8 @@ WORKDIR /home/node/frontend
 
 COPY . ./
 
-#RUN npm ci
-RUN npm ci --only=prod
+RUN npm ci
+#RUN npm ci --only=prod
 RUN npm run build
 
 
