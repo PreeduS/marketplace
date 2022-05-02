@@ -52,7 +52,26 @@ const Product = () => {
     }
   }
   
+
+  const getButtons = () => {
+
+    if(product?.headerButton){
+
+      if(Array.isArray(product.headerButton)){
+        return product.headerButton.map(p => (
+          <Button disabled = {!p?.link} onClick = {()=>  p?.link && window.open(p?.link, '_blank') }>{p?.label}</Button>
+
+        ))
+      }
+      return  <Button disabled = {!product?.headerButton.link} onClick = {
+        ()=>  (product?.headerButton as any).link && window.open((product?.headerButton as any).link, '_blank') }>{product?.headerButton?.label}</Button>
+
+    }
+
+    return null
+  }
   
+//                 <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
 
   
   
@@ -70,7 +89,7 @@ const Product = () => {
             product?.headerButton && 
             <HeaderButton>
             <ButtonContainer>
-                <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
+                {getButtons()}
             </ButtonContainer>
           </HeaderButton>
        

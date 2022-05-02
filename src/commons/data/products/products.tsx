@@ -41,10 +41,15 @@ const products = [
     categoryId: assetType.application.id,
     //tags: ['Forecasting', 'Quantum', 'Application'],
     tags: [tag.quantumMachineLearning, tag.optimization],
-    headerButton: {
+    headerButton: [{
       link: 'http://forecasting-demo.hs7svmevr5p.us-south.codeengine.appdomain.cloud/',
       label: 'Launch'
     },
+    {
+      link: `${window.location.origin}/download/TimeSeriesForecastingCodebase.zip`,
+      label: 'Download'
+    }
+  ],
     boxItem: {
       details: 'IBM Quantum',
       description:

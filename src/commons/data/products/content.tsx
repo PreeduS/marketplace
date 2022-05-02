@@ -12,6 +12,7 @@ import quantumBusinessFoundations from './content/QuantumBusinessFoundations';
 import quantumTechnicalFoundations from './content/QuantumTechnicalFoundations';
 import vqls from './content/VQLS';
 
+import videoImagePath from 'src/commons/data/products/images/video.png';
 
 import getMockInstructions from 'src/commons/data/getMockInstructions';
 
@@ -452,11 +453,39 @@ const content = [
               url='https://qiskit.org/documentation/'
             />
             <BoxLink label='qiskit.org' url='https://qiskit.org/' />
+           
+            <img src = {videoImagePath} alt = "" style = {{display: 'block', width: '40rem', height: 'auto', marginTop: '2.5rem', marginBottom: '2rem', cursor: 'pointer'}}></img>
+           
+        
           </>
+
+          
         ),
       },
       info: null ,
-      instructions: getMockInstructions() ,
+      //instructions: getMockInstructions() ,
+      instructions: {
+        description:  <>
+
+        <Typography as = 'p' marginBottom= '0'>
+          1. Select the launch button to open the application in a new tab
+        
+          </Typography>
+          
+          <Typography as = 'p' marginBottom= '0'>
+          2. Access the application using authorized credentials
+          </Typography>
+          <Typography as = 'p' marginBottom= '0'>
+          3. For details on codebase and usage rights contact the IBM Quantum team for access
+
+
+          </Typography>
+         
+
+        
+        
+              </>
+      },
       pricing: {
         description: (
           <>

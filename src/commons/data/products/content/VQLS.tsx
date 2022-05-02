@@ -5,6 +5,7 @@ import Pricing from 'src/commons/components/Pricing';
 import { UnorderedList, ListItem } from 'carbon-components-react';
 
 import getMockInstructions from 'src/commons/data/getMockInstructions';
+import videoImagePath from 'src/commons/data/products/images/video.png';
 
 
 const content = {
@@ -78,6 +79,15 @@ popular schemes that demonstrates how variational circuits can be used to solve 
             url='https://qiskit.org/documentation/'
           />
           <BoxLink label='qiskit.org' url='https://qiskit.org/' />
+
+          <Typography as='p' marginTop = '1rem' marginBottom='0'>
+          Let's make some assumptions first about the form of 𝐀 and 𝐛. The first assumption is that the matrix 𝐀 is Hermitian, A∈CN×N can always be expressed as linear combination of unitaries. We assume that such a decomposition is presented to us. Also, we assume that the vector 𝐛 and ci are real numbers and each 𝐴𝑖 is an unitary. Later we discuss, how one can achieve such a decomposition. Also, we assume that the vector
+b=(b0,b1,b2,⋯,bN−1) can be loaded to a quantum state |b⟩=1∑j=0N−1|bi|2∑i=0N−1bi|i⟩ using a suitable unitary U.
+          </Typography>
+
+ 
+            <img src = {videoImagePath} alt = "" style = {{display: 'block', width: '40rem', height: 'auto', marginTop: '2.5rem', marginBottom: '2rem', cursor: 'pointer'}}></img>
+           
         </>
       ),
     },

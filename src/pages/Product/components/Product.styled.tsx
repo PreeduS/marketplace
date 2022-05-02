@@ -26,11 +26,14 @@ export const HeaderButton = styled.div`
     margin-top:3.5rem;
     margin-left: 5rem;
     margin-right: 1rem;
+
+
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   min-width: 10rem;
+  flex-direction: column ;
   
  
   button {
@@ -39,6 +42,7 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     padding: 0;
     margin: 0;
+    margin-bottom: .5rem;
   }
 `;
 

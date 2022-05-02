@@ -58,7 +58,7 @@ const Home = () => {
       <IntroBanner>
         <IntroBannerContent>
           <IntroTitle as='h1' marginBottom='1rem'>
-          Quantum Accelerator <br />Asset Library
+          Quantum Accelerator Library
 
           </IntroTitle>
           <IntroDescription as='p'>
