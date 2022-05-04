@@ -5,6 +5,7 @@ import {
   Cube16,
   Bee16,
   IbmSecurity16,
+  ArrowRight32
 } from '@carbon/icons-react';
 
 import {
@@ -17,9 +18,12 @@ import {
   IntroBannerContent,
   CategoryBanner,
   CategoryBannerItem,
+  CategoryBannerItemHeader,
+  CategoryBannerItemFooter,
   Description,
   BoxItemsInline,
   IconContainer,
+  AssetTypeIconContainer,
 } from './Home.styled';
 import BoxItem from 'src/commons/components/BoxItem';
 import Typography from 'src/commons/components/Typography';
@@ -114,8 +118,19 @@ const Home = () => {
           );
           return (
             <CategoryBannerItem onClick={() => navigate(url)} key={category.id}>
-              <IconContainer>{getIcon(category.id)}</IconContainer>
-              {category.name}
+              <CategoryBannerItemHeader>
+              {/*category.name*/}
+
+      <Typography as='h3'>
+      {category.name}
+      </Typography>
+
+              </CategoryBannerItemHeader>
+              <CategoryBannerItemFooter>
+              <AssetTypeIconContainer>{getIcon(category.id)}</AssetTypeIconContainer>
+              <IconContainer> <ArrowRight32 /></IconContainer>
+           
+              </CategoryBannerItemFooter>
             </CategoryBannerItem>
           );
         })}

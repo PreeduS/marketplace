@@ -3,9 +3,9 @@ import products, { getProducts } from './products';
 import { assetType, tag } from 'src/commons/data/constants';
 
 export const categories = [
-  assetType.algorithms,
   assetType.application,
   assetType.educationCourses,
+  assetType.algorithms,
   assetType.thirdPartyAssets,
 ].map(category => ({ id: category.id, name: category.label }));
 
