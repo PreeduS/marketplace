@@ -20,6 +20,7 @@ type Props = {
   description: React.ReactNode;
   disabled?: boolean;
   tags?: { id: number; label: string }[];
+  icon?: React.ReactNode
 };
 
 const BoxItem = ({
@@ -29,6 +30,7 @@ const BoxItem = ({
   description,
   disabled,
   tags,
+  icon
 }: Props) => {
   const navigate = useNavigate();
 
@@ -43,10 +45,11 @@ const BoxItem = ({
     };
   }, [id, disabled, navigate]);
 
+  //  <Carbon32 />
   return (
     <Wrapper disabled={disabled}>
       <IconContainer>
-        <Carbon32 />
+        {icon}
       </IconContainer>
 
       <Typography as='h5' marginBottom='.25rem' onClick={clickHandler}>

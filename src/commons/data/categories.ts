@@ -30,6 +30,7 @@ export const featuredProductsCategories = {
           return {
             id,
             title: product.title,
+            categoryId: product.categoryId,
             details: product.boxItem.details,
             description: product.boxItem.description,
             disabled: false,

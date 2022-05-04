@@ -28,6 +28,8 @@ import { useNavigate } from 'react-router-dom';
 
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
+import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon'
+
 import {
   categories,
   featuredProductsCategories,
@@ -38,7 +40,7 @@ import { buildUrl } from 'src/commons/helpers/qs';
 
 const Home = () => {
   const navigate = useNavigate();
-
+/*
   const getIcon = (index: number) => {
     const Icon = {
       0: <Carbon16 />,
@@ -50,6 +52,8 @@ const Home = () => {
 
     return Icon;
   };
+ */
+  const getIcon = (assetTypeId: number)=> getAssetTypeIcon({assetTypeId})
 
   return (
     <Wrapper>
@@ -72,15 +76,21 @@ const Home = () => {
         <h4>Spotlight </h4>
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
+            if(!item){
+              return null;
+            }
+           
+
             return (
               <BoxItem
-                id={item?.id || undefined}
-                key={item?.id}
-                title={item?.title}
-                details={item?.details}
-                description={item?.description}
-                disabled={item?.disabled}
-                tags={item?.tags}
+                id={item.id || undefined}
+                icon = {getAssetTypeIcon({assetTypeId: item.categoryId})}
+                key={item.id}
+                title={item.title}
+                details={item.details}
+                description={item.description}
+                disabled={item.disabled}
+                tags={item.tags}
               />
             );
           })}
@@ -104,7 +114,7 @@ const Home = () => {
           );
           return (
             <CategoryBannerItem onClick={() => navigate(url)} key={category.id}>
-              <IconContainer>{getIcon(0)}</IconContainer>
+              <IconContainer>{getIcon(category.id)}</IconContainer>
               {category.name}
             </CategoryBannerItem>
           );
@@ -143,6 +153,7 @@ const Home = () => {
                 return (
                   <BoxItem
                     id={item?.id || undefined}
+                    icon = {getAssetTypeIcon({assetTypeId: category.id})}
                     key={item?.id}
                     title={item?.title}
                     details={item?.details}
