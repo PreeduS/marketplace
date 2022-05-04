@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Typography, {Props} from 'src/commons/components/Typography';
+import Typography, { Props } from 'src/commons/components/Typography';
 
 import { coolGray } from '@carbon/colors';
 import imagePath from './images/diffraction.png';
@@ -15,7 +15,7 @@ export const Content = styled.div`
   padding: 2rem 3rem;
 `;
 export const IntroBanner = styled.div`
-  display: flex; 
+  display: flex;
   //height: 14rem;
   background: ${coolGray[20]};
   //justify-content: center;
@@ -36,13 +36,12 @@ export const IntroDescription = styled(Typography)<Props>`
   //font-weight: 300;
 `;
 export const IntroBannerContent = styled.div`
-  
   display: flex;
   flex-direction: column;
- // height: 14rem;
+  // height: 14rem;
   height: 100%;
- 
-//  align-items: center;
+
+  //  align-items: center;
 
   //margin: 0 14rem;
   //padding-top: 3rem;
@@ -54,7 +53,7 @@ export const IntroBannerImage = styled.div`
   //position: absolute;
   //top: 2.25rem;
   //left: -13rem;
- 
+
   display: flex;
   width: calc(1.35 * 25rem);
   height: 25rem;

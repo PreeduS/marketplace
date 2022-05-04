@@ -58,23 +58,20 @@ const Home = () => {
       <IntroBanner>
         <IntroBannerContent>
           <IntroTitle as='h1' marginBottom='1rem'>
-          Quantum Accelerator Library
-
+            Quantum Accelerator Library
           </IntroTitle>
           <IntroDescription as='p'>
-            Quantum computing enabled solutions, <br />applications and proprietary
-            algorithm libraries
+            Quantum computing enabled solutions, <br />
+            applications and proprietary algorithm libraries
           </IntroDescription>
         </IntroBannerContent>
         <IntroBannerImage />
-
       </IntroBanner>
 
       <Content>
         <h4>Spotlight </h4>
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
-         
             return (
               <BoxItem
                 id={item?.id || undefined}
@@ -83,7 +80,7 @@ const Home = () => {
                 details={item?.details}
                 description={item?.description}
                 disabled={item?.disabled}
-                tags = {item?.tags}
+                tags={item?.tags}
               />
             );
           })}
@@ -91,12 +88,12 @@ const Home = () => {
       </Content>
 
       <CategoryBanner>
-        {[...categories/*, ...categories2*/].map(category => {
+        {[...categories /*, ...categories2*/].map(category => {
           const itemId = `assetType_${category.id}`;
           const filter = {
-            assetType:{
+            assetType: {
               [itemId]: true,
-            }
+            },
           };
           const url = buildUrl(
             'explore',
@@ -106,7 +103,7 @@ const Home = () => {
             }
           );
           return (
-            <CategoryBannerItem onClick={() => navigate(url)} key = {category.id}>
+            <CategoryBannerItem onClick={() => navigate(url)} key={category.id}>
               <IconContainer>{getIcon(0)}</IconContainer>
               {category.name}
             </CategoryBannerItem>
@@ -124,10 +121,9 @@ const Home = () => {
       {categories2.map(category => {
         const itemId = `assetType_${category.id}`;
         const filter = {
-          assetType:{
-
+          assetType: {
             [itemId]: true,
-          }
+          },
         };
         const url = buildUrl(
           'explore',
@@ -138,7 +134,7 @@ const Home = () => {
         );
 
         return (
-          <Content key = {category.id}>
+          <Content key={category.id}>
             <h4 style={{ cursor: 'pointer' }} onClick={() => navigate(url)}>
               {category.name}
             </h4>
@@ -147,13 +143,12 @@ const Home = () => {
                 return (
                   <BoxItem
                     id={item?.id || undefined}
-                    key={item?.id }
+                    key={item?.id}
                     title={item?.title}
                     details={item?.details}
                     description={item?.description}
                     disabled={item?.disabled}
-                    tags = {item?.tags}
-
+                    tags={item?.tags}
                   />
                 );
               })}

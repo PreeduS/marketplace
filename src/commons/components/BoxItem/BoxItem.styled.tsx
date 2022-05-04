@@ -57,9 +57,8 @@ export const Description = styled.div`
 export const TagsContainer = styled.div`
   height: 4rem;
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
- 
 `;

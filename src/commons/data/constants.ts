@@ -1,30 +1,25 @@
-
-
-export const assetType  = {
-
+export const assetType = {
   educationCourses: {
     id: 1,
-    label: 'Education'
+    label: 'Education',
   },
   algorithms: {
     id: 2,
-    label: 'Algorithms'
+    label: 'Algorithms',
   },
   application: {
     id: 3,
-    label: 'Application'
+    label: 'Application',
   },
   thirdPartyAssets: {
     id: 4,
-    label: 'Partners?'
+    label: 'Partners?',
   },
-}
+};
 
 export type AssetTypeKeys = keyof typeof assetType;
 
 export const tag = {
-
-
   algebra: {
     id: 1,
     label: 'Algebra',
@@ -42,17 +37,15 @@ export const tag = {
     id: 4,
     label: 'Chemistry',
   },
- 
-}
+};
 export type TagTypeKeys = keyof typeof tag;
 
-
 export const filters = {
-  assetType: (Object.keys(assetType) as AssetTypeKeys[]).map((key) => assetType[key]  ),
-  tag: (Object.keys(tag) as TagTypeKeys[]).map((key) => tag[key]  ),
-  
-}
-
+  assetType: (Object.keys(assetType) as AssetTypeKeys[]).map(
+    key => assetType[key]
+  ),
+  tag: (Object.keys(tag) as TagTypeKeys[]).map(key => tag[key]),
+};
 
 /*
   quantumSolutions: {

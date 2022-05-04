@@ -5,7 +5,6 @@ import Pricing from 'src/commons/components/Pricing';
 
 import getMockInstructions from 'src/commons/data/getMockInstructions';
 
-
 const content = {
   productId: 4,
   tabs: {
@@ -107,7 +106,7 @@ const content = {
       ),
     },
     info: null,
-    instructions: getMockInstructions() ,
+    instructions: getMockInstructions(),
 
     pricing: {
       description: (

@@ -90,7 +90,7 @@ const content = {
       ),
     },
     info: null,
-    instructions: getMockInstructions() ,
+    instructions: getMockInstructions(),
     pricing: {
       description: (
         <>

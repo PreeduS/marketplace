@@ -1,7 +1,7 @@
- const getMockInstructions = () => {
-  return ({
-    description: null
-  })
-}
+const getMockInstructions = () => {
+  return {
+    description: null,
+  };
+};
 
-export default getMockInstructions
+export default getMockInstructions;

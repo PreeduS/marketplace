@@ -11,9 +11,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import products from 'src/commons/data/products';
 
-import {assetType, tag, } from 'src/commons/data/constants'
-import { intersection } from 'lodash'
-
+import { assetType, tag } from 'src/commons/data/constants';
+import { intersection } from 'lodash';
 
 type Filter = {
   filter: any;
@@ -28,10 +27,8 @@ const Explore = () => {
       filter: qs.filter || {},
     };
   }, [location.search]);
- 
 
   const setFilter = (updatedFilter: any) => {
-    
     const url = buildUrl(location.pathname, updatedFilter, {
       encodeValuesOnly: false,
     });
@@ -39,67 +36,73 @@ const Explore = () => {
     navigate(url);
   };
 
-  const onFilterChangeHandler = (section: string, checked: boolean, id: string | number) => {
- 
+  const onFilterChangeHandler = (
+    section: string,
+    checked: boolean,
+    id: string | number
+  ) => {
     const filterOptions = {
       ...(filter.filter as any),
-      [section]:{
+      [section]: {
         ...filter.filter[section],
         [id]: checked,
-      }
-     
+      },
     };
 
     if (filterOptions[section][id] !== true) {
       delete filterOptions[section][id];
     }
 
- 
     const updatedFilter = {
       ...filter,
       filter: {
         ...filterOptions,
       },
     };
- 
+
     setFilter(updatedFilter);
   };
 
-
-
-
   const filteredProducts = React.useMemo(() => {
-
-    const selectedCategories = Object.keys(filter.filter).reduce((acc: string[], key: string) => {
-      const value = filter.filter[key]
-      const isSelected = value === 'true'
-      if(isSelected){
-        return [...acc, key]
-      }
-      return [...acc]
-    },[])
- 
+    const selectedCategories = Object.keys(filter.filter).reduce(
+      (acc: string[], key: string) => {
+        const value = filter.filter[key];
+        const isSelected = value === 'true';
+        if (isSelected) {
+          return [...acc, key];
+        }
+        return [...acc];
+      },
+      []
+    );
 
     let filteredProduct = products;
-    if(filter.filter['assetType']){
-      const selectedIds = Object.keys(filter.filter['assetType']).filter(key => filter.filter['assetType'][key] === 'true').map(key => Number(key.split('_')[1]))
-      
+    if (filter.filter['assetType']) {
+      const selectedIds = Object.keys(filter.filter['assetType'])
+        .filter(key => filter.filter['assetType'][key] === 'true')
+        .map(key => Number(key.split('_')[1]));
 
-      filteredProduct = filteredProduct.filter(p => p.categoryId !== null && selectedIds.includes(p.categoryId ))
-
-      
+      filteredProduct = filteredProduct.filter(
+        p => p.categoryId !== null && selectedIds.includes(p.categoryId)
+      );
     }
-    if(filter.filter['tag']){
-      const selectedIds = Object.keys(filter.filter['tag']).filter(key => filter.filter['tag'][key] === 'true').map(key => Number(key.split('_')[1]))
-    
+    if (filter.filter['tag']) {
+      const selectedIds = Object.keys(filter.filter['tag'])
+        .filter(key => filter.filter['tag'][key] === 'true')
+        .map(key => Number(key.split('_')[1]));
 
-      filteredProduct = filteredProduct.filter(p => p.tags !== null && intersection(p.tags.map(x => x.id), selectedIds).length > 0 )
-
-
+      filteredProduct = filteredProduct.filter(
+        p =>
+          p.tags !== null &&
+          intersection(
+            p.tags.map(x => x.id),
+            selectedIds
+          ).length > 0
+      );
     }
-    
-   // console.log('filter.filter selectedCategories' , selectedCategories)
-/*
+
+    // console.log('filter.filter selectedCategories' , selectedCategories)
+    /*
 
     if (filter.filter['category_50'] === 'true') {
       return products.filter(product => product.categoryId === 50);
@@ -116,8 +119,6 @@ const Explore = () => {
     return products;
     */
     return filteredProduct;
-
-
   }, [filter.filter]);
 
   return (
@@ -142,7 +143,7 @@ const Explore = () => {
                 details={product.boxItem.details}
                 description={product.boxItem.description}
                 disabled={product.categoryId === null}
-                tags = {product.boxItem.tags}
+                tags={product.boxItem.tags}
               />
             );
           })}

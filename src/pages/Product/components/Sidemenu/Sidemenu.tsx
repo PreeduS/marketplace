@@ -2,20 +2,16 @@ import React from 'react';
 import { Wrapper, Content, Header } from './Sidemenu.styled';
 
 import CheckboxItem from './ListItem';
-import {
- 
-  Cube16, 
-} from '@carbon/icons-react';
+import { Cube16 } from '@carbon/icons-react';
 
 type Props = {
   assetType?: {
-    id:number, 
-    label: string
-  }
-}
+    id: number;
+    label: string;
+  };
+};
 
-
-const Sidemenu = ({assetType}:Props) => {
+const Sidemenu = ({ assetType }: Props) => {
   return (
     <Wrapper>
       <Content>
@@ -24,11 +20,13 @@ const Sidemenu = ({assetType}:Props) => {
 
         <Header marginTop='2rem'>Categories</Header>
 
-        {assetType?.label && <CheckboxItem
-          labelText={ assetType?.label || '' }
-          id='item_1'
-          icon={<Cube16 color='#0066cc' />}
-        />}
+        {assetType?.label && (
+          <CheckboxItem
+            labelText={assetType?.label || ''}
+            id='item_1'
+            icon={<Cube16 color='#0066cc' />}
+          />
+        )}
 
         {false &&
           [1, 2].map((value, index) => {

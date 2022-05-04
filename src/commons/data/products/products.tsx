@@ -1,38 +1,31 @@
-import {assetType, tag} from 'src/commons/data/constants'
- 
+import { assetType, tag } from 'src/commons/data/constants';
+
 import { getContent } from './content';
 
-
-const getMockAlgorithm = ({id, title}:{id:number, title: string}) => {
-
-  return (
-    {
-      id,
-      title,
-      description:
+const getMockAlgorithm = ({ id, title }: { id: number; title: string }) => {
+  return {
+    id,
+    title,
+    description:
       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt',
-      categoryId: assetType.algorithms.id,
-     
-      tags: [tag.algebra],
-      headerButton:{
-        link: null,
-        label: 'Download'
-      },
-      boxItem: {
-        details: 'IBM Quantum',
-        description:
-        'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt',
-        tags: [tag.algebra],
-  
-      },
-      content: getContent({ productId: -1 }),
-    }
-  )
-}
+    categoryId: assetType.algorithms.id,
 
+    tags: [tag.algebra],
+    headerButton: {
+      link: null,
+      label: 'Download',
+    },
+    boxItem: {
+      details: 'IBM Quantum',
+      description:
+        'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt',
+      tags: [tag.algebra],
+    },
+    content: getContent({ productId: -1 }),
+  };
+};
 
 const products = [
-
   {
     id: 2,
     title: 'Time series forecasting',
@@ -41,15 +34,16 @@ const products = [
     categoryId: assetType.application.id,
     //tags: ['Forecasting', 'Quantum', 'Application'],
     tags: [tag.quantumMachineLearning, tag.optimization],
-    headerButton: [{
-      link: 'http://forecasting-demo.hs7svmevr5p.us-south.codeengine.appdomain.cloud/',
-      label: 'Launch'
-    },
-    {
-      link: `${window.location.origin}/download/TimeSeriesForecastingCodebase.zip`,
-      label: 'Download'
-    }
-  ],
+    headerButton: [
+      {
+        link: 'http://forecasting-demo.hs7svmevr5p.us-south.codeengine.appdomain.cloud/',
+        label: 'Launch',
+      },
+      {
+        link: `${window.location.origin}/download/TimeSeriesForecastingCodebase.zip`,
+        label: 'Download',
+      },
+    ],
     boxItem: {
       details: 'IBM Quantum',
       description:
@@ -68,7 +62,7 @@ const products = [
     tags: [tag.optimization],
     headerButton: {
       link: 'https://vrp-demo-ny.hs7svmevr5p.us-south.codeengine.appdomain.cloud',
-      label: 'Launch'
+      label: 'Launch',
     },
     boxItem: {
       details: 'IBM Quantum',
@@ -87,9 +81,9 @@ const products = [
     categoryId: assetType.educationCourses.id,
     //tags: ['Chemistry', 'Quantum'],
     tags: [tag.chemistry],
-    headerButton:{
+    headerButton: {
       link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+QA-Chem01+2021_Q3/about',
-      label: 'Launch'
+      label: 'Launch',
     },
     boxItem: {
       details: 'IBM Quantum',
@@ -108,17 +102,16 @@ const products = [
     categoryId: assetType.educationCourses.id,
     //tags: ['Machine Learning', 'Quantum'],
     tags: [tag.quantumMachineLearning],
-    headerButton:{
+    headerButton: {
       link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+QA-QEML01+2021_Q3/about',
-      label: 'Launch'
+      label: 'Launch',
     },
     boxItem: {
       details: 'IBM Quantum',
       description:
         'An advanced course that takes a deep look at algorithms, and how to apply hybrid quantum-classical models to specific machine learning problems.',
-     // tags: ['Machine Learning', 'Quantum'],
+      // tags: ['Machine Learning', 'Quantum'],
       tags: [tag.quantumMachineLearning],
-
     },
     content: getContent({ productId: 4 }),
   },
@@ -128,19 +121,18 @@ const products = [
     description:
       'This course is for all business and technical professionals that would like to build a foundational knowledge of quantum computing technology and applications for business.',
     categoryId: assetType.educationCourses.id,
-   
+
     tags: [],
-    headerButton:{
+    headerButton: {
       link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+2021QA2+2021-Q3/about',
-      label: 'Launch'
+      label: 'Launch',
     },
     boxItem: {
       details: 'IBM Quantum',
       description:
         'This course is for all business and technical professionals that would like to build a foundational knowledge of quantum computing technology and applications for business.',
- 
-      tags: [],
 
+      tags: [],
     },
     content: getContent({ productId: 5 }),
   },
@@ -148,20 +140,19 @@ const products = [
     id: 6,
     title: 'Quantum technical foundations',
     description:
-    'Designed for technical professionals, this class explores the building blocks of applying quantum to many types of problems.',
+      'Designed for technical professionals, this class explores the building blocks of applying quantum to many types of problems.',
     categoryId: assetType.educationCourses.id,
-   
+
     tags: [],
-    headerButton:{
+    headerButton: {
       link: 'https://quantum-accelerator.edunext.io/courses/course-v1:quantum-acc+2021QA1+2021-Q3/about',
-      label: 'Launch'
+      label: 'Launch',
     },
     boxItem: {
       details: 'IBM Quantum',
       description:
-      'Designed for technical professionals, this class explores the building blocks of applying quantum to many types of problems.',
+        'Designed for technical professionals, this class explores the building blocks of applying quantum to many types of problems.',
       tags: [],
-
     },
     content: getContent({ productId: 6 }),
   },
@@ -169,36 +160,34 @@ const products = [
     id: 7,
     title: 'VQLS',
     description:
-    'The Variational Quantum Linear Solver, or the VQLS, is a quantum algorithm that uses a variational scheme to solve systems of linear equations.',
+      'The Variational Quantum Linear Solver, or the VQLS, is a quantum algorithm that uses a variational scheme to solve systems of linear equations.',
     categoryId: assetType.algorithms.id,
-   
+
     tags: [tag.algebra],
-    headerButton:{
+    headerButton: {
       link: `${window.location.origin}/download/VQLS.zip`,
-      label: 'Download'
+      label: 'Download',
     },
     boxItem: {
       details: 'IBM Quantum',
       description:
-      'The Variational Quantum Linear Solver, or the VQLS, is a quantum algorithm that uses a variational scheme to solve systems of linear equations.',
+        'The Variational Quantum Linear Solver, or the VQLS, is a quantum algorithm that uses a variational scheme to solve systems of linear equations.',
       tags: [tag.algebra],
-
     },
     content: getContent({ productId: 7 }),
   },
 
-  getMockAlgorithm({id: 100, title: 'QSVT'}),
-  getMockAlgorithm({id: 101, title: 'Hybrid-HHL'}),
-  getMockAlgorithm({id: 102, title: 'Amplitude estimation without QPE'}),
-  getMockAlgorithm({id: 103, title: 'QML'}),
-  getMockAlgorithm({id: 104, title: 'Quantum kernel selector'}),
-  getMockAlgorithm({id: 105, title: 'Quantum kernel ensemble'}),
-  getMockAlgorithm({id: 106, title: 'QLSTM'}),
-  getMockAlgorithm({id: 107, title: 'QCS'}),
-  getMockAlgorithm({id: 108, title: 'Hidden Markov'}),
+  getMockAlgorithm({ id: 100, title: 'QSVT' }),
+  getMockAlgorithm({ id: 101, title: 'Hybrid-HHL' }),
+  getMockAlgorithm({ id: 102, title: 'Amplitude estimation without QPE' }),
+  getMockAlgorithm({ id: 103, title: 'QML' }),
+  getMockAlgorithm({ id: 104, title: 'Quantum kernel selector' }),
+  getMockAlgorithm({ id: 105, title: 'Quantum kernel ensemble' }),
+  getMockAlgorithm({ id: 106, title: 'QLSTM' }),
+  getMockAlgorithm({ id: 107, title: 'QCS' }),
+  getMockAlgorithm({ id: 108, title: 'Hidden Markov' }),
 
-
-/*
+  /*
   ...Array.from(Array(24).keys()).map(index => ({
     id: index + 100,
     title: 'Product Title',

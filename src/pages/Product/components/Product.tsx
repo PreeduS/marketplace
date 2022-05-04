@@ -32,8 +32,7 @@ import AppHeader from 'src/commons/components/Layout/AppHeader';
 
 import products from 'src/commons/data/products';
 
-import {assetType, AssetTypeKeys} from 'src/commons/data/constants'
-
+import { assetType, AssetTypeKeys } from 'src/commons/data/constants';
 
 const Product = () => {
   const { id } = useParams();
@@ -45,66 +44,71 @@ const Product = () => {
 
   //const asset = product?.categoryId ? Object.keys(assetType).filter(key => assetType[key]?.id === product?.categoryId) : null
   const getAssetType = () => {
-    const key =  product?.categoryId ? (Object.keys(assetType) as AssetTypeKeys[]).find((key) => assetType[key]?.id ===  product?.categoryId) : null
+    const key = product?.categoryId
+      ? (Object.keys(assetType) as AssetTypeKeys[]).find(
+          key => assetType[key]?.id === product?.categoryId
+        )
+      : null;
 
-    if(key){
-      return assetType[key]
+    if (key) {
+      return assetType[key];
     }
-  }
-  
+  };
 
   const getButtons = () => {
-
-    if(product?.headerButton){
-
-      if(Array.isArray(product.headerButton)){
+    if (product?.headerButton) {
+      if (Array.isArray(product.headerButton)) {
         return product.headerButton.map(p => (
-          <Button disabled = {!p?.link} onClick = {()=>  p?.link && window.open(p?.link, '_blank') }>{p?.label}</Button>
-
-        ))
+          <Button
+            disabled={!p?.link}
+            onClick={() => p?.link && window.open(p?.link, '_blank')}
+          >
+            {p?.label}
+          </Button>
+        ));
       }
-      return  <Button disabled = {!product?.headerButton.link} onClick = {
-        ()=>  (product?.headerButton as any).link && window.open((product?.headerButton as any).link, '_blank') }>{product?.headerButton?.label}</Button>
-
+      return (
+        <Button
+          disabled={!product?.headerButton.link}
+          onClick={() =>
+            (product?.headerButton as any).link &&
+            window.open((product?.headerButton as any).link, '_blank')
+          }
+        >
+          {product?.headerButton?.label}
+        </Button>
+      );
     }
 
-    return null
-  }
-  
-//                 <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
+    return null;
+  };
 
-  
-  
+  //                 <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
+
   return (
     <Wrapper>
       <AppHeader />
-      <Sidemenu assetType = {getAssetType()}/>
+      <Sidemenu assetType={getAssetType()} />
       <Content>
         <HeaderContainer>
           <HeaderDetails>
-           <Typography as='h2'>{product?.title}</Typography>
+            <Typography as='h2'>{product?.title}</Typography>
             <Description>{product?.description}</Description>
           </HeaderDetails>
-          {
-            product?.headerButton && 
+          {product?.headerButton && (
             <HeaderButton>
-            <ButtonContainer>
-                {getButtons()}
-            </ButtonContainer>
-          </HeaderButton>
-       
-          }
-
+              <ButtonContainer>{getButtons()}</ButtonContainer>
+            </HeaderButton>
+          )}
         </HeaderContainer>
 
-          <div>
-
-        {product?.tags.map(value => (
-          <Tag key={value.id} type='cool-gray' size='sm'>
-            {value.label}
-          </Tag>
-        ))}
-          </div>
+        <div>
+          {product?.tags.map(value => (
+            <Tag key={value.id} type='cool-gray' size='sm'>
+              {value.label}
+            </Tag>
+          ))}
+        </div>
         <TabsWrapper>
           <Tabs>
             {!!product?.content?.tabs.overview && (

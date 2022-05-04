@@ -24,7 +24,7 @@ const content = [
         primaryDescription: (
           <>
             <Typography as='h5' marginTop='2rem' marginBottom='1rem'>
-            Lorem ipsum
+              Lorem ipsum
             </Typography>
             <Typography as='p' marginBottom='2.5rem'>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -40,35 +40,35 @@ const content = [
         secondaryDescription: (
           <>
             <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-            Lorem ipsum
+              Lorem ipsum
             </Typography>
             <p>
               Ut enim ad minima veniam, quis nostrum exercitationem ullam
               corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
               consequatur
             </p>
-            {false &&
-            <BoxItems>
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-            </BoxItems>
-            }
+            {false && (
+              <BoxItems>
+                <BoxItem
+                  title='title'
+                  details='details'
+                  description='descriptions'
+                />
+                <BoxItem
+                  title='title'
+                  details='details'
+                  description='descriptions'
+                />
+                <BoxItem
+                  title='title'
+                  details='details'
+                  description='descriptions'
+                />
+              </BoxItems>
+            )}
 
             <Typography as='h5' marginTop='2.5rem' marginBottom='1rem'>
-            Lorem ipsum
+              Lorem ipsum
             </Typography>
             <p>
               Temporibus autem quibusdam et aut officiis debitis aut rerum
@@ -87,7 +87,7 @@ const content = [
         description: (
           <>
             <Typography as='h5' marginTop='2rem' marginBottom='1rem'>
-            Lorem ipsum
+              Lorem ipsum
             </Typography>
 
             <Typography as='p' marginBottom='1rem'>
@@ -165,7 +165,7 @@ const content = [
       },
       */
       info: null as any,
-      instructions: getMockInstructions() ,
+      instructions: getMockInstructions(),
 
       pricing: {
         description: (
@@ -330,8 +330,8 @@ const content = [
           </>
         ),
       },
-      info: null ,
-      instructions: getMockInstructions() ,
+      info: null,
+      instructions: getMockInstructions(),
       pricing: {
         description: (
           <>
@@ -453,38 +453,40 @@ const content = [
               url='https://qiskit.org/documentation/'
             />
             <BoxLink label='qiskit.org' url='https://qiskit.org/' />
-           
-            <img src = {videoImagePath} alt = "" style = {{display: 'block', width: '40rem', height: 'auto', marginTop: '2.5rem', marginBottom: '2rem', cursor: 'pointer'}}></img>
-           
-        
-          </>
 
-          
+            <img
+              src={videoImagePath}
+              alt=''
+              style={{
+                display: 'block',
+                width: '40rem',
+                height: 'auto',
+                marginTop: '2.5rem',
+                marginBottom: '2rem',
+                cursor: 'pointer',
+              }}
+            ></img>
+          </>
         ),
       },
-      info: null ,
+      info: null,
       //instructions: getMockInstructions() ,
       instructions: {
-        description:  <>
+        description: (
+          <>
+            <Typography as='p' marginBottom='0'>
+              1. Select the launch button to open the application in a new tab
+            </Typography>
 
-        <Typography as = 'p' marginBottom= '0'>
-          1. Select the launch button to open the application in a new tab
-        
-          </Typography>
-          
-          <Typography as = 'p' marginBottom= '0'>
-          2. Access the application using authorized credentials
-          </Typography>
-          <Typography as = 'p' marginBottom= '0'>
-          3. For details on codebase and usage rights contact the IBM Quantum team for access
-
-
-          </Typography>
-         
-
-        
-        
-              </>
+            <Typography as='p' marginBottom='0'>
+              2. Access the application using authorized credentials
+            </Typography>
+            <Typography as='p' marginBottom='0'>
+              3. For details on codebase and usage rights contact the IBM
+              Quantum team for access
+            </Typography>
+          </>
+        ),
       },
       pricing: {
         description: (
