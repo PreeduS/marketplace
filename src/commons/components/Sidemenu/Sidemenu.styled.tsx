@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 2rem 2rem;
   border-right: 1px solid ${coolGray[20]};
+ 
 `;
 export const Content = styled.div`
   //position:sticky;

@@ -3,7 +3,8 @@ import { coolGray } from '@carbon/colors';
 
 export default createGlobalStyle`
   body {
-    background: ${coolGray[10]};
+    //background: ${coolGray[10]};
+    background:white;
     
   }
 

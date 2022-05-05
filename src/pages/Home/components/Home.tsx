@@ -17,6 +17,8 @@ import {
   IntroDescription,
   IntroBannerContent,
   CategoryBanner,
+  CategoryBannerTitle,
+  CategoryBannerItemsContainer,
   CategoryBannerItem,
   CategoryBannerItemHeader,
   CategoryBannerItemFooter,
@@ -33,6 +35,8 @@ import { useNavigate } from 'react-router-dom';
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
 import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon'
+import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType'
+
 
 import {
   categories,
@@ -77,7 +81,11 @@ const Home = () => {
       </IntroBanner>
 
       <Content>
-        <h4>Spotlight </h4>
+   
+        <Typography as='h5'>
+        Spotlight
+        </Typography>
+
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
             if(!item){
@@ -89,6 +97,7 @@ const Home = () => {
               <BoxItem
                 id={item.id || undefined}
                 icon = {getAssetTypeIcon({assetTypeId: item.categoryId})}
+                tagType = {getAssetTagType({assetTypeId: item.categoryId})}
                 key={item.id}
                 title={item.title}
                 details={item.details}
@@ -102,6 +111,17 @@ const Home = () => {
       </Content>
 
       <CategoryBanner>
+        <CategoryBannerTitle>
+        <Typography as='h5' style={{ cursor: 'pointer' }} onClick={() => navigate('/explore')}>
+          Categories
+      
+        </Typography>
+
+ 
+        </CategoryBannerTitle>
+        <CategoryBannerItemsContainer>
+ 
+
         {[...categories /*, ...categories2*/].map(category => {
           const itemId = `assetType_${category.id}`;
           const filter = {
@@ -134,6 +154,7 @@ const Home = () => {
             </CategoryBannerItem>
           );
         })}
+        </CategoryBannerItemsContainer>
 
         {/*Array.from(Array(13).keys()).map(index => (
           <CategoryBannerItem onClick={() => navigate(`/explore`)}>
@@ -160,15 +181,17 @@ const Home = () => {
 
         return (
           <Content key={category.id}>
-            <h4 style={{ cursor: 'pointer' }} onClick={() => navigate(url)}>
-              {category.name}
-            </h4>
+   
+            <Typography as='h5' style={{ cursor: 'pointer' }} onClick={() => navigate(url)}>
+            {category.name}
+        </Typography>
             <BoxItemsInline>
               {category.items.map(item => {
                 return (
                   <BoxItem
                     id={item?.id || undefined}
                     icon = {getAssetTypeIcon({assetTypeId: category.id})}
+                    tagType = {getAssetTagType({assetTypeId: category.id})}
                     key={item?.id}
                     title={item?.title}
                     details={item?.details}

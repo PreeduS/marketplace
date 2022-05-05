@@ -15,7 +15,9 @@ export const Wrapper = styled.div<{ disabled?: boolean }>`
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
 
-  border: 1px solid ${coolGray[20]};
+  //border: 1px solid ${coolGray[20]};
+  background: #F4F4F4;
+ 
 
   ${props =>
     props.disabled &&
@@ -46,6 +48,7 @@ export const Details = styled.div`
 `;
 export const Description = styled.div`
   margin-bottom: 1rem;
+  margin-top:1rem;
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 1.2rem;

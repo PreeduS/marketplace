@@ -9,7 +9,7 @@ import {
 } from './BoxItem.styled';
 import Typography from 'src/commons/components/Typography';
 import { Carbon32 } from '@carbon/icons-react';
-import { Tag } from 'carbon-components-react';
+import { Tag, TagTypeName } from 'carbon-components-react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -21,6 +21,7 @@ type Props = {
   disabled?: boolean;
   tags?: { id: number; label: string }[];
   icon?: React.ReactNode
+  tagType? : TagTypeName
 };
 
 const BoxItem = ({
@@ -30,7 +31,8 @@ const BoxItem = ({
   description,
   disabled,
   tags,
-  icon
+  icon,
+  tagType = 'cool-gray'
 }: Props) => {
   const navigate = useNavigate();
 
@@ -55,7 +57,7 @@ const BoxItem = ({
       <Typography as='h5' marginBottom='.25rem' onClick={clickHandler}>
         {title}
       </Typography>
-      <Details>{details}</Details>
+      {false &&<Details>{details}</Details>}
       <Description>{description}</Description>
 
       <TagsContainer>
@@ -65,7 +67,7 @@ const BoxItem = ({
         <div>
           {tags &&
             tags.map(value => (
-              <Tag key={value.id} type='cool-gray' size='sm'>
+              <Tag key={value.id} type= {tagType} size='sm'>
                 {value.label}
               </Tag>
             ))}
