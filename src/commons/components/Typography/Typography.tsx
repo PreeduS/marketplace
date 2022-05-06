@@ -5,6 +5,7 @@ export type Props = {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   marginTop?: string;
   marginBottom?: string;
+  marginLeft?: string;
   onClick?: React.MouseEventHandler;
   style?: Object;
 };
@@ -14,6 +15,7 @@ const Typography = ({
   as,
   marginTop,
   marginBottom,
+  marginLeft,
   onClick,
   style = {},
 }: Props) => {
@@ -23,6 +25,7 @@ const Typography = ({
       as={as}
       marginTop={marginTop}
       marginBottom={marginBottom}
+      marginLeft={marginLeft}
       style={style}
     >
       {children}

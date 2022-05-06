@@ -3,6 +3,7 @@ import products, { getProducts } from './products';
 import { assetType, tag } from 'src/commons/data/constants';
 
 import prototypeQuantumKernelTraining from 'src/commons/data/products/content/PrototypeQuantumKernelTraining';
+import prototypeEntanglementForging from 'src/commons/data/products/content/PrototypeEntanglementForging';
 
 
 export const categories = [
@@ -26,7 +27,7 @@ export const featuredProductsCategories = {
   id: null,
   name: 'Spotlight',
   items: [
-    ...[prototypeQuantumKernelTraining.productId, 2, 1, 3, 4, 5, 6]
+    ...[prototypeQuantumKernelTraining.productId, prototypeEntanglementForging.productId, 2, 1, 3, 4, 5, 6]
       .map(id => {
         const product = getProducts({ id });
         if (product) {

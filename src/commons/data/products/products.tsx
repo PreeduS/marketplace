@@ -183,7 +183,7 @@ const products = [
     'Toolkit for training quantum kernels in machine learning applications.',
     categoryId: assetType.algorithms.id,
 
-    tags: [tag.algebra],
+    tags: [tag.quantumMachineLearning],
     headerButton: [{
       link: `https://github.com/qiskit-community/prototype-quantum-kernel-training`,
       label: 'Launch',
@@ -191,9 +191,28 @@ const products = [
     boxItem: {
       details: null,
       description: 'Toolkit for training quantum kernels in machine learning applications.',
-      tags: [tag.algebra],
+      tags: [tag.quantumMachineLearning],
     },
     content: getContent({ productId: 8 }),
+  },
+  {
+    id: 9,
+    title: 'Entanglement Forging',
+    description:
+    'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
+    categoryId: assetType.algorithms.id,
+
+    tags: [tag.chemistry],
+    headerButton: [{
+      link: `https://github.com/qiskit-community/prototype-entanglement-forging`,
+      label: 'Launch',
+    }],
+    boxItem: {
+      details: null,
+      description:     'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
+      tags: [tag.chemistry],
+    },
+    content: getContent({ productId: 9 }),
   },
 
   getMockAlgorithm({ id: 100, title: 'QSVT' }),

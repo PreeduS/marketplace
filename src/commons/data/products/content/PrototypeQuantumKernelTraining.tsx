@@ -106,7 +106,7 @@ const content = {
              [1]
             </a>.
           
-          [1].
+ 
           </Typography>
 
    
