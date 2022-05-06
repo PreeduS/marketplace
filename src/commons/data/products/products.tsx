@@ -176,6 +176,25 @@ const products = [
     },
     content: getContent({ productId: 7 }),
   },
+  {
+    id: 8,
+    title: 'Quantum Kernel Training Toolkit',
+    description:
+    'Toolkit for training quantum kernels in machine learning applications.',
+    categoryId: assetType.algorithms.id,
+
+    tags: [tag.algebra],
+    headerButton: [{
+      link: `https://github.com/qiskit-community/prototype-quantum-kernel-training`,
+      label: 'Launch',
+    }],
+    boxItem: {
+      details: null,
+      description: 'Toolkit for training quantum kernels in machine learning applications.',
+      tags: [tag.algebra],
+    },
+    content: getContent({ productId: 8 }),
+  },
 
   getMockAlgorithm({ id: 100, title: 'QSVT' }),
   getMockAlgorithm({ id: 101, title: 'Hybrid-HHL' }),

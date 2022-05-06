@@ -11,6 +11,7 @@ import quantumMachineLearning from './content/QuantumMachineLearning';
 import quantumBusinessFoundations from './content/QuantumBusinessFoundations';
 import quantumTechnicalFoundations from './content/QuantumTechnicalFoundations';
 import vqls from './content/VQLS';
+import prototypeQuantumKernelTraining from 'src/commons/data/products/content/PrototypeQuantumKernelTraining';
 
 import videoImagePath from 'src/commons/data/products/images/video.png';
 
@@ -506,6 +507,7 @@ const content = [
   quantumBusinessFoundations,
   quantumTechnicalFoundations,
   vqls,
+  prototypeQuantumKernelTraining,
 ];
 
 export const getContent = ({ productId }: { productId: number }) => {

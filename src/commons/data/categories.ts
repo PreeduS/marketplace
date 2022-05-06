@@ -2,6 +2,9 @@ import products, { getProducts } from './products';
 
 import { assetType, tag } from 'src/commons/data/constants';
 
+import prototypeQuantumKernelTraining from 'src/commons/data/products/content/PrototypeQuantumKernelTraining';
+
+
 export const categories = [
   assetType.application,
   assetType.educationCourses,
@@ -23,7 +26,7 @@ export const featuredProductsCategories = {
   id: null,
   name: 'Spotlight',
   items: [
-    ...[2, 1, 3, 4, 5, 6]
+    ...[prototypeQuantumKernelTraining.productId, 2, 1, 3, 4, 5, 6]
       .map(id => {
         const product = getProducts({ id });
         if (product) {
