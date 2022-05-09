@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
-import { coolGray } from '@carbon/colors';
-
 export const Wrapper = styled.div`
   display: flex;
   flex: 1;
   padding-top: 3rem;
-
-  //border-right: 1px solid ${coolGray[20]};
 `;
 
 export const HeaderContainer = styled.div`
@@ -60,14 +56,7 @@ export const TabsWrapper = styled.div`
   .bx--tabs--scrollable__nav-link:focus {
     outline-color: transparent;
   }
-  // .bx--tabs--scrollable .bx--tabs--scrollable__nav-link:focus, .bx--tabs--scrollable .bx--tabs--scrollable__nav-link:active
 `;
-
-// TabList, TabPanels, TabPanel
-
-export const TabList = styled.div``;
-export const TabPanels = styled.div``;
-export const TabPanel = styled.div``;
 
 export const BoxItems = styled.div`
   display: flex;

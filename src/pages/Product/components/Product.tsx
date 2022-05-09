@@ -1,17 +1,12 @@
 import React from 'react';
 import Sidemenu from './Sidemenu';
-import {
-  Header,
-  HeaderName,
-  Tag /* Tabs, Tab*/,
-} from 'carbon-components-react';
-//import { Button } from 'carbon-components-react';
+import { Tag } from 'carbon-components-react';
+
 import {
   Wrapper,
   Content,
   Description,
   TabsWrapper,
-  /*TabList, TabPanels, TabPanel */ BoxItems,
   AssetWrapper,
   AssetContent,
   TabContent,
@@ -20,7 +15,7 @@ import {
   HeaderButton,
   ButtonContainer,
 } from './Product.styled';
-import BoxItem from 'src/commons/components/BoxItem';
+
 import { Button } from 'carbon-components-react';
 
 import { Tabs, Tab } from 'carbon-components-react';
@@ -43,7 +38,6 @@ const Product = () => {
     [id]
   );
 
-  //const asset = product?.categoryId ? Object.keys(assetType).filter(key => assetType[key]?.id === product?.categoryId) : null
   const getAssetType = () => {
     const key = product?.categoryId
       ? (Object.keys(assetType) as AssetTypeKeys[]).find(
@@ -83,8 +77,6 @@ const Product = () => {
 
     return null;
   };
-
-  //                 <Button disabled = {!product?.headerButton.link} onClick = {()=>  product?.headerButton.link && window.open(product?.headerButton.link, '_blank') }>{product?.headerButton?.label}</Button>
 
   return (
     <Wrapper>
@@ -155,13 +147,7 @@ const Product = () => {
                 </TabContent>
               </Tab>
             )}
-            {/*!!product?.content?.tabs.info && (
-              <Tab label='Info'>
-                <TabContent>
-                  {product?.content?.tabs.info.description}
-                </TabContent>
-              </Tab>
-            )*/}
+
             {!!product?.content?.tabs.pricing && (
               <Tab label='Entitlement'>
                 <TabContent>
