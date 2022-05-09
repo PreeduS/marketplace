@@ -1,6 +1,6 @@
 import products, { getProducts } from './products';
 
-import { assetType, tag } from 'src/commons/data/constants';
+import { assetType } from 'src/commons/data/constants';
 
 import prototypeQuantumKernelTraining from 'src/commons/data/products/content/PrototypeQuantumKernelTraining';
 import prototypeEntanglementForging from 'src/commons/data/products/content/PrototypeEntanglementForging';
@@ -44,28 +44,15 @@ export const featuredProductsCategories = {
         return null;
       })
       .filter(product => product !== null),
-    /*
-    ...Array.from(Array(2).keys()).map(() => ({
-      id: null,
-      title: 'Product',
-      details: 'IBM Quantum',
-      description:
-        'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-      disabled: true,
-      tags:[]
-    })),
-    */
   ],
 };
 
 export const categories2 = [
   {
-    //id: 50,
     id: assetType.application.id,
-    //name: 'Applications',
+
     name: assetType.application.label,
     items: [
-      //...[1, 2]
       ...products
         .filter(product => product.categoryId === assetType.application.id)
         .map(({ id }) => {
@@ -83,26 +70,13 @@ export const categories2 = [
           return null;
         })
         .filter(product => product !== null),
-      /*
-      ...Array.from(Array(4).keys()).map(() => ({
-        id: null,
-        title: 'Product',
-        details: 'IBM Quantum',
-        description:
-          'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-        disabled: true,
-        tags:[]
-      })),
-      */
     ],
   },
 
   {
-    //id: 51,
     id: assetType.educationCourses.id,
     name: assetType.educationCourses.label,
     items: [
-      //...[1, 2]
       ...products
         .filter(product => product.categoryId === assetType.educationCourses.id)
         .map(({ id }) => {
@@ -120,35 +94,8 @@ export const categories2 = [
           return null;
         })
         .filter(product => product !== null),
-      /*
-      ...Array.from(Array(4).keys()).map(() => ({
-        id: null,
-        title: 'Product',
-        details: 'IBM Quantum',
-        description:
-          'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-        disabled: true,
-        tags:[]
-      })),
-      */
     ],
   },
-
-  /*
-  {
-    id: 51,
-    name: 'Learning Assets',
-    items: Array.from(Array(6).keys()).map(() => ({
-      id: null,
-      title: 'Product',
-      details: 'IBM Quantum',
-      description:
-        'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-      disabled: true,
-      tags:[]
-    })),
-  },
-  */
 
   {
     id: assetType.algorithms.id,
@@ -172,17 +119,6 @@ export const categories2 = [
           return null;
         })
         .filter(product => product !== null),
-      /*
-      ...Array.from(Array(6).keys()).map(() => ({
-      id: null,
-      title: 'Product',
-      details: 'IBM Quantum',
-      description:
-        'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates',
-      disabled: true,
-      tags:[]
-    }))
-    */
     ],
   },
 

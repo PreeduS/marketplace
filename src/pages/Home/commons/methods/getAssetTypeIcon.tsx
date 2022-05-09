@@ -1,5 +1,4 @@
 import { assetType } from 'src/commons/data/constants';
-import React from 'react';
 
 import {
   ChartBubblePacked32,

@@ -17,14 +17,11 @@ export const Content = styled.div`
 `;
 export const IntroBanner = styled.div`
   display: flex;
-  //height: 14rem;
+
   background: ${coolGray[20]};
 
-  //justify-content: center;
   align-items: center;
-  //margin-top: 3rem;
 
-  //padding: 3.5rem 20rem;
   background: #161616;
 
   justify-content: space-between;
@@ -36,27 +33,18 @@ export const IntroTitle = styled(Typography)<Props>`
 `;
 export const IntroDescription = styled(Typography)<Props>`
   font-size: 1.1rem;
-  //font-weight: 300;
 `;
 export const IntroBannerContent = styled.div`
   display: flex;
   flex-direction: column;
-  // height: 14rem;
+
   height: 100%;
 
-  //  align-items: center;
-
-  //margin: 0 14rem;
-  //padding-top: 3rem;
   color: white;
   justify-content: space-between;
   padding: 1.5rem 0;
 `;
 export const IntroBannerImage = styled.div`
-  //position: absolute;
-  //top: 2.25rem;
-  //left: -13rem;
-
   display: flex;
   width: calc(1.35 * 25rem);
   height: 25rem;
@@ -70,16 +58,15 @@ export const IntroBannerImage = styled.div`
 `;
 export const CategoryBanner = styled.div`
   display: flex;
-  //flex-wrap: wrap;
+
   min-height: 6rem;
   background: ${coolGray[20]};
   background: #f4f4f4;
-  //justify-content: center;
-  //align-items: center;
+
   margin-top: 2rem;
 
   padding: 1.5rem 3rem;
-  //  justify-content: flex-end;
+
   justify-content: space-between;
 `;
 
@@ -96,9 +83,9 @@ export const CategoryBannerItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-width: 12rem;
-  //width: calc((100vw - 6rem) / 5 - 3.25rem);
+
   flex-shrink: 0;
-  //margin: 1.25rem 1.5rem;
+
   cursor: pointer;
   padding: 0.75rem;
 

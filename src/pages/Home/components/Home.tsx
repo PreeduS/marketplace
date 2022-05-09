@@ -1,12 +1,4 @@
-import React from 'react';
-import {
-  Carbon16,
-  IbmCloud16,
-  Cube16,
-  Bee16,
-  IbmSecurity16,
-  ArrowRight32,
-} from '@carbon/icons-react';
+import { ArrowRight32 } from '@carbon/icons-react';
 
 import {
   Wrapper,
@@ -47,19 +39,7 @@ import { buildUrl } from 'src/commons/helpers/qs';
 
 const Home = () => {
   const navigate = useNavigate();
-  /*
-  const getIcon = (index: number) => {
-    const Icon = {
-      0: <Carbon16 />,
-      1: <IbmCloud16 />,
-      2: <Cube16 />,
-      3: <Bee16 />,
-      4: <IbmSecurity16 />,
-    }[index % 5];
 
-    return Icon;
-  };
- */
   const getIcon = (assetTypeId: number) => getAssetTypeIcon({ assetTypeId });
 
   return (
@@ -153,13 +133,6 @@ const Home = () => {
             );
           })}
         </CategoryBannerItemsContainer>
-
-        {/*Array.from(Array(13).keys()).map(index => (
-          <CategoryBannerItem onClick={() => navigate(`/explore`)}>
-            <IconContainer>{getIcon(index)}</IconContainer>
-            Category Item
-          </CategoryBannerItem>
-        ))*/}
       </CategoryBanner>
 
       {categories2.map(category => {
