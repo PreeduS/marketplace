@@ -11,7 +11,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import products from 'src/commons/data/products';
 
-import { assetType, tag } from 'src/commons/data/constants';
 import { intersection } from 'lodash';
 import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon';
 import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType';
@@ -66,18 +65,6 @@ const Explore = () => {
   };
 
   const filteredProducts = React.useMemo(() => {
-    const selectedCategories = Object.keys(filter.filter).reduce(
-      (acc: string[], key: string) => {
-        const value = filter.filter[key];
-        const isSelected = value === 'true';
-        if (isSelected) {
-          return [...acc, key];
-        }
-        return [...acc];
-      },
-      []
-    );
-
     let filteredProduct = products;
     if (filter.filter['assetType']) {
       const selectedIds = Object.keys(filter.filter['assetType'])
@@ -103,23 +90,6 @@ const Explore = () => {
       );
     }
 
-    // console.log('filter.filter selectedCategories' , selectedCategories)
-    /*
-
-    if (filter.filter['category_50'] === 'true') {
-      return products.filter(product => product.categoryId === 50);
-    } else if (filter.filter['category_3'] === 'true') {
-      return products.filter(product => product.categoryId === 3);
-    } else if (filter.filter['category_5'] === 'true') {
-      return products.filter(product => product.categoryId === 5);
-    } else if (Object.keys(filter.filter).length > 0) {
-      return products
-        .filter(product => product.categoryId === null)
-        .slice(0, 5);
-    }
-
-    return products;
-    */
     return filteredProduct;
   }, [filter.filter]);
 

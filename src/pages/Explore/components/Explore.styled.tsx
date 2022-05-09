@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
-import { coolGray } from '@carbon/colors';
-
 export const Wrapper = styled.div`
   display: flex;
   flex: 1;
   padding-top: 3rem;
-
-  //border-right: 1px solid ${coolGray[20]};
 `;
 
 export const Content = styled.div`
