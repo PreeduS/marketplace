@@ -33,7 +33,7 @@ import AppHeader from 'src/commons/components/Layout/AppHeader';
 import products from 'src/commons/data/products';
 
 import { assetType, AssetTypeKeys } from 'src/commons/data/constants';
-import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType'
+import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType';
 
 const Product = () => {
   const { id } = useParams();
@@ -104,9 +104,12 @@ const Product = () => {
         </HeaderContainer>
 
         <div>
-    
           {product?.tags.map(value => (
-            <Tag key={value.id} type= {getAssetTagType({assetTypeId: product?.categoryId})} size='sm'>
+            <Tag
+              key={value.id}
+              type={getAssetTagType({ assetTypeId: product?.categoryId })}
+              size='sm'
+            >
               {value.label}
             </Tag>
           ))}

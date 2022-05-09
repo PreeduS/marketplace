@@ -20,8 +20,8 @@ type Props = {
   description: React.ReactNode;
   disabled?: boolean;
   tags?: { id: number; label: string }[];
-  icon?: React.ReactNode
-  tagType? : TagTypeName
+  icon?: React.ReactNode;
+  tagType?: TagTypeName;
 };
 
 const BoxItem = ({
@@ -32,7 +32,7 @@ const BoxItem = ({
   disabled,
   tags,
   icon,
-  tagType = 'cool-gray'
+  tagType = 'cool-gray',
 }: Props) => {
   const navigate = useNavigate();
 
@@ -50,14 +50,12 @@ const BoxItem = ({
   //  <Carbon32 />
   return (
     <Wrapper disabled={disabled}>
-      <IconContainer>
-        {icon}
-      </IconContainer>
+      <IconContainer>{icon}</IconContainer>
 
       <Typography as='h5' marginBottom='.25rem' onClick={clickHandler}>
         {title}
       </Typography>
-      {false &&<Details>{details}</Details>}
+      {false && <Details>{details}</Details>}
       <Description>{description}</Description>
 
       <TagsContainer>
@@ -67,7 +65,7 @@ const BoxItem = ({
         <div>
           {tags &&
             tags.map(value => (
-              <Tag key={value.id} type= {tagType} size='sm'>
+              <Tag key={value.id} type={tagType} size='sm'>
                 {value.label}
               </Tag>
             ))}

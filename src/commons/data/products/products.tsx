@@ -180,17 +180,20 @@ const products = [
     id: 8,
     title: 'Quantum Kernel Training Toolkit',
     description:
-    'Toolkit for training quantum kernels in machine learning applications.',
+      'Toolkit for training quantum kernels in machine learning applications.',
     categoryId: assetType.algorithms.id,
 
     tags: [tag.quantumMachineLearning],
-    headerButton: [{
-      link: `https://github.com/qiskit-community/prototype-quantum-kernel-training`,
-      label: 'Launch',
-    }],
+    headerButton: [
+      {
+        link: `https://github.com/qiskit-community/prototype-quantum-kernel-training`,
+        label: 'Launch',
+      },
+    ],
     boxItem: {
       details: null,
-      description: 'Toolkit for training quantum kernels in machine learning applications.',
+      description:
+        'Toolkit for training quantum kernels in machine learning applications.',
       tags: [tag.quantumMachineLearning],
     },
     content: getContent({ productId: 8 }),
@@ -199,17 +202,20 @@ const products = [
     id: 9,
     title: 'Entanglement Forging',
     description:
-    'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
+      'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
     categoryId: assetType.algorithms.id,
 
     tags: [tag.chemistry],
-    headerButton: [{
-      link: `https://github.com/qiskit-community/prototype-entanglement-forging`,
-      label: 'Launch',
-    }],
+    headerButton: [
+      {
+        link: `https://github.com/qiskit-community/prototype-entanglement-forging`,
+        label: 'Launch',
+      },
+    ],
     boxItem: {
       details: null,
-      description:     'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
+      description:
+        'A module for simulating chemical and physical systems using a Variational Quantum Eigensolver (VQE) enhanced by Entanglement Forging.',
       tags: [tag.chemistry],
     },
     content: getContent({ productId: 9 }),
@@ -218,17 +224,20 @@ const products = [
     id: 10,
     title: 'Quantum Computing With Prototypes',
     description:
-    'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
+      'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
     categoryId: assetType.algorithms.id,
 
     tags: [],
-    headerButton: [{
-      link: `https://medium.com/qiskit/try-out-the-latest-advances-in-quantum-computing-with-ibm-quantum-prototypes-11f51124cb61`,
-      label: 'Launch',
-    }],
+    headerButton: [
+      {
+        link: `https://medium.com/qiskit/try-out-the-latest-advances-in-quantum-computing-with-ibm-quantum-prototypes-11f51124cb61`,
+        label: 'Launch',
+      },
+    ],
     boxItem: {
       details: null,
-      description:        'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
+      description:
+        'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
 
       tags: [],
     },

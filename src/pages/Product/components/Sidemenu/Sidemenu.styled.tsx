@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem 3rem;
-  //border-right: 1px solid ${coolGray[20]}; 
+  //border-right: 1px solid ${coolGray[20]};
 `;
 export const Content = styled.div`
   //position:sticky;

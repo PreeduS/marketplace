@@ -20,14 +20,13 @@ export const IntroBanner = styled.div`
   //height: 14rem;
   background: ${coolGray[20]};
 
-
   //justify-content: center;
   align-items: center;
   //margin-top: 3rem;
 
   //padding: 3.5rem 20rem;
   background: #161616;
-  
+
   justify-content: space-between;
   padding: 0 3rem;
   height: 25rem;
@@ -73,27 +72,24 @@ export const CategoryBanner = styled.div`
   display: flex;
   //flex-wrap: wrap;
   min-height: 6rem;
-  background: ${coolGray[20]};  
-  background: #F4F4F4;
+  background: ${coolGray[20]};
+  background: #f4f4f4;
   //justify-content: center;
   //align-items: center;
   margin-top: 2rem;
-  
+
   padding: 1.5rem 3rem;
-//  justify-content: flex-end;
+  //  justify-content: flex-end;
   justify-content: space-between;
 `;
 
-
-export const CategoryBannerTitle = styled.div`
- 
-`
+export const CategoryBannerTitle = styled.div``;
 export const CategoryBannerItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-`
+`;
 
 export const CategoryBannerItem = styled.div`
   display: flex;
@@ -104,8 +100,8 @@ export const CategoryBannerItem = styled.div`
   flex-shrink: 0;
   //margin: 1.25rem 1.5rem;
   cursor: pointer;
-  padding: .75rem;
- 
+  padding: 0.75rem;
+
   background: white;
   width: 18vw;
   margin-left: 1px;
@@ -113,17 +109,14 @@ export const CategoryBannerItem = styled.div`
 `;
 export const CategoryBannerItemHeader = styled.div`
   display: flex;
-`
+`;
 export const CategoryBannerItemFooter = styled.div`
   display: flex;
   justify-content: space-between;
-`
-
-
+`;
 
 export const AssetTypeIconContainer = styled.div`
   margin-right: 0.5rem;
-  
 `;
 export const IconContainer = styled.div`
   margin-right: 0.5rem;
@@ -138,5 +131,4 @@ export const BoxItemsInline = styled.div`
   display: flex;
   overflow: hidden;
   margin-top: 2rem;
- 
 `;

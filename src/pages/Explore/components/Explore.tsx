@@ -13,9 +13,8 @@ import products from 'src/commons/data/products';
 
 import { assetType, tag } from 'src/commons/data/constants';
 import { intersection } from 'lodash';
-import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon'
-import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType'
-
+import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon';
+import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType';
 
 type Filter = {
   filter: any;
@@ -141,9 +140,8 @@ const Explore = () => {
             return (
               <BoxItem
                 id={product.id}
-                icon = {getAssetTypeIcon({assetTypeId: product.categoryId})}
-                tagType = {getAssetTagType({assetTypeId: product.categoryId})}
-
+                icon={getAssetTypeIcon({ assetTypeId: product.categoryId })}
+                tagType={getAssetTagType({ assetTypeId: product.categoryId })}
                 key={product.id}
                 title={product.title}
                 details={product.boxItem.details}

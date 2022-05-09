@@ -8,6 +8,6 @@ export const Wrapper = styled.div<{
   margin-top: ${props => props.marginTop || 0};
   margin-bottom: ${props => props.marginBottom || 0};
   margin-left: ${props => props.marginLeft || 0};
- 
+
   ${props => props.onClick !== undefined && 'cursor: pointer;'}
 `;

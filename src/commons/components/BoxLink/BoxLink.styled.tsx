@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   display: inline-flex;
   min-width: 8rem;
   max-width: 20rem;
- 
+
   min-height: 4rem;
 
   flex-shrink: 0;

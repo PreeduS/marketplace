@@ -5,7 +5,7 @@ import {
   Cube16,
   Bee16,
   IbmSecurity16,
-  ArrowRight32
+  ArrowRight32,
 } from '@carbon/icons-react';
 
 import {
@@ -34,9 +34,8 @@ import { useNavigate } from 'react-router-dom';
 
 import AppHeader from 'src/commons/components/Layout/AppHeader';
 
-import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon'
-import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType'
-
+import getAssetTypeIcon from 'src/pages/Home/commons/methods/getAssetTypeIcon';
+import getAssetTagType from 'src/pages/Home/commons/methods/getAssetTagType';
 
 import {
   categories,
@@ -48,7 +47,7 @@ import { buildUrl } from 'src/commons/helpers/qs';
 
 const Home = () => {
   const navigate = useNavigate();
-/*
+  /*
   const getIcon = (index: number) => {
     const Icon = {
       0: <Carbon16 />,
@@ -61,7 +60,7 @@ const Home = () => {
     return Icon;
   };
  */
-  const getIcon = (assetTypeId: number)=> getAssetTypeIcon({assetTypeId})
+  const getIcon = (assetTypeId: number) => getAssetTypeIcon({ assetTypeId });
 
   return (
     <Wrapper>
@@ -81,23 +80,19 @@ const Home = () => {
       </IntroBanner>
 
       <Content>
-   
-        <Typography as='h5'>
-        Spotlight
-        </Typography>
+        <Typography as='h5'>Spotlight</Typography>
 
         <BoxItemsInline>
           {featuredProductsCategories.items.map(item => {
-            if(!item){
+            if (!item) {
               return null;
             }
-           
 
             return (
               <BoxItem
                 id={item.id || undefined}
-                icon = {getAssetTypeIcon({assetTypeId: item.categoryId})}
-                tagType = {getAssetTagType({assetTypeId: item.categoryId})}
+                icon={getAssetTypeIcon({ assetTypeId: item.categoryId })}
+                tagType={getAssetTagType({ assetTypeId: item.categoryId })}
                 key={item.id}
                 title={item.title}
                 details={item.details}
@@ -112,48 +107,51 @@ const Home = () => {
 
       <CategoryBanner>
         <CategoryBannerTitle>
-        <Typography as='h5' style={{ cursor: 'pointer' }} onClick={() => navigate('/explore')}>
-          Categories
-      
-        </Typography>
-
- 
+          <Typography
+            as='h5'
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/explore')}
+          >
+            Categories
+          </Typography>
         </CategoryBannerTitle>
         <CategoryBannerItemsContainer>
- 
+          {[...categories /*, ...categories2*/].map(category => {
+            const itemId = `assetType_${category.id}`;
+            const filter = {
+              assetType: {
+                [itemId]: true,
+              },
+            };
+            const url = buildUrl(
+              'explore',
+              { filter },
+              {
+                encodeValuesOnly: false,
+              }
+            );
+            return (
+              <CategoryBannerItem
+                onClick={() => navigate(url)}
+                key={category.id}
+              >
+                <CategoryBannerItemHeader>
+                  {/*category.name*/}
 
-        {[...categories /*, ...categories2*/].map(category => {
-          const itemId = `assetType_${category.id}`;
-          const filter = {
-            assetType: {
-              [itemId]: true,
-            },
-          };
-          const url = buildUrl(
-            'explore',
-            { filter },
-            {
-              encodeValuesOnly: false,
-            }
-          );
-          return (
-            <CategoryBannerItem onClick={() => navigate(url)} key={category.id}>
-              <CategoryBannerItemHeader>
-              {/*category.name*/}
-
-      <Typography as='h3'>
-      {category.name}
-      </Typography>
-
-              </CategoryBannerItemHeader>
-              <CategoryBannerItemFooter>
-              <AssetTypeIconContainer>{getIcon(category.id)}</AssetTypeIconContainer>
-              <IconContainer> <ArrowRight32 /></IconContainer>
-           
-              </CategoryBannerItemFooter>
-            </CategoryBannerItem>
-          );
-        })}
+                  <Typography as='h3'>{category.name}</Typography>
+                </CategoryBannerItemHeader>
+                <CategoryBannerItemFooter>
+                  <AssetTypeIconContainer>
+                    {getIcon(category.id)}
+                  </AssetTypeIconContainer>
+                  <IconContainer>
+                    {' '}
+                    <ArrowRight32 />
+                  </IconContainer>
+                </CategoryBannerItemFooter>
+              </CategoryBannerItem>
+            );
+          })}
         </CategoryBannerItemsContainer>
 
         {/*Array.from(Array(13).keys()).map(index => (
@@ -181,17 +179,20 @@ const Home = () => {
 
         return (
           <Content key={category.id}>
-   
-            <Typography as='h5' style={{ cursor: 'pointer' }} onClick={() => navigate(url)}>
-            {category.name}
-        </Typography>
+            <Typography
+              as='h5'
+              style={{ cursor: 'pointer' }}
+              onClick={() => navigate(url)}
+            >
+              {category.name}
+            </Typography>
             <BoxItemsInline>
               {category.items.map(item => {
                 return (
                   <BoxItem
                     id={item?.id || undefined}
-                    icon = {getAssetTypeIcon({assetTypeId: category.id})}
-                    tagType = {getAssetTagType({assetTypeId: category.id})}
+                    icon={getAssetTypeIcon({ assetTypeId: category.id })}
+                    tagType={getAssetTagType({ assetTypeId: category.id })}
                     key={item?.id}
                     title={item?.title}
                     details={item?.details}
