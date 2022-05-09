@@ -13,16 +13,6 @@ export const categories = [
   assetType.thirdPartyAssets,
 ].map(category => ({ id: category.id, name: category.label }));
 
-/*[
-  { id: 1, name: 'Foundation' },
-  { id: 2, name: 'Algebra' },
-  { id: 3, name: 'Machine Learning' },
-  { id: 4, name: 'Optimization' },
-  { id: 5, name: 'Chemistry' },
-  { id: 6, name: 'Quantum solutions' },
-  { id: 7, name: 'Education' },
-];*/
-
 export const featuredProductsCategories = {
   id: null,
   name: 'Spotlight',
