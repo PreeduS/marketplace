@@ -13,6 +13,7 @@ import quantumTechnicalFoundations from './content/QuantumTechnicalFoundations';
 import vqls from './content/VQLS';
 import prototypeQuantumKernelTraining from 'src/commons/data/products/content/PrototypeQuantumKernelTraining';
 import prototypeEntanglementForging from 'src/commons/data/products/content/PrototypeEntanglementForging';
+import quantumComputingPrototypes from 'src/commons/data/products/content/QuantumComputingPrototypes';
 
 import videoImagePath from 'src/commons/data/products/images/video.png';
 
@@ -510,6 +511,7 @@ const content = [
   vqls,
   prototypeQuantumKernelTraining,
   prototypeEntanglementForging,
+  quantumComputingPrototypes,
 ];
 
 export const getContent = ({ productId }: { productId: number }) => {

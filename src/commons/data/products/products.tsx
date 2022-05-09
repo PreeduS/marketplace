@@ -214,6 +214,26 @@ const products = [
     },
     content: getContent({ productId: 9 }),
   },
+  {
+    id: 10,
+    title: 'Quantum Computing With Prototypes',
+    description:
+    'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
+    categoryId: assetType.algorithms.id,
+
+    tags: [],
+    headerButton: [{
+      link: `https://medium.com/qiskit/try-out-the-latest-advances-in-quantum-computing-with-ibm-quantum-prototypes-11f51124cb61`,
+      label: 'Launch',
+    }],
+    boxItem: {
+      details: null,
+      description:        'Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning.',
+
+      tags: [],
+    },
+    content: getContent({ productId: 10 }),
+  },
 
   getMockAlgorithm({ id: 100, title: 'QSVT' }),
   getMockAlgorithm({ id: 101, title: 'Hybrid-HHL' }),
