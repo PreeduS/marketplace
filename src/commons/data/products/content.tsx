@@ -118,55 +118,7 @@ const content = [
           </>
         ),
       },
-      /*
-      info: {
-        description: (
-          <>
-            <Typography as='h5' marginTop='2rem' marginBottom='1rem'>
-              Title
-            </Typography>
 
-            <p>
-              Ut enim ad minima veniam, quis nostrum exercitationem ullam
-              corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              consequatur
-            </p>
-            <BoxItems>
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-              <BoxItem
-                title='title'
-                details='details'
-                description='descriptions'
-              />
-            </BoxItems>
-          </>
-        ),
-      },
-      */
       info: null as any,
       instructions: getMockInstructions(),
 
@@ -319,17 +271,6 @@ const content = [
               url='https://qiskit.org/documentation/'
             />
             <BoxLink label='qiskit.org' url='https://qiskit.org/' />
-            {/*
-
-          <Typography as = 'h5' marginTop='2rem' marginBottom='1rem'>Title</Typography>
-          <Typography as = 'p' marginBottom='1rem'>
-            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
-          </Typography>
-          <Typography as = 'p'>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          </Typography>
-            */}
           </>
         ),
       },
@@ -473,7 +414,7 @@ const content = [
         ),
       },
       info: null,
-      //instructions: getMockInstructions() ,
+
       instructions: {
         description: (
           <>

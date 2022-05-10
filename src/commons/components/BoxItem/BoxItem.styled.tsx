@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-import { coolGray } from '@carbon/colors';
-
 export const Wrapper = styled.div<{ disabled?: boolean }>`
-  //width: 14.5rem;
   width: 17rem;
   min-height: 12.5rem;
   min-height: 19.5rem;
@@ -15,7 +12,6 @@ export const Wrapper = styled.div<{ disabled?: boolean }>`
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
 
-  //border: 1px solid ${coolGray[20]};
   background: #f4f4f4;
 
   ${props =>
@@ -28,12 +24,6 @@ export const Wrapper = styled.div<{ disabled?: boolean }>`
 
 export const IconContainer = styled.div`
   margin-bottom: 0.75rem;
-`;
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex: 1;
 `;
 
 export const Details = styled.div`

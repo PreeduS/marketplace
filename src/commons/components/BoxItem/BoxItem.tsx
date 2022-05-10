@@ -3,12 +3,11 @@ import {
   Wrapper,
   IconContainer,
   Details,
-  Content,
   Description,
   TagsContainer,
 } from './BoxItem.styled';
 import Typography from 'src/commons/components/Typography';
-import { Carbon32 } from '@carbon/icons-react';
+
 import { Tag, TagTypeName } from 'carbon-components-react';
 
 import { useNavigate } from 'react-router-dom';
@@ -47,7 +46,6 @@ const BoxItem = ({
     };
   }, [id, disabled, navigate]);
 
-  //  <Carbon32 />
   return (
     <Wrapper disabled={disabled}>
       <IconContainer>{icon}</IconContainer>

@@ -6,13 +6,6 @@ import prototypeQuantumKernelTraining from 'src/commons/data/products/content/Pr
 import prototypeEntanglementForging from 'src/commons/data/products/content/PrototypeEntanglementForging';
 import quantumComputingPrototypes from 'src/commons/data/products/content/QuantumComputingPrototypes';
 
-export const categories = [
-  assetType.application,
-  assetType.educationCourses,
-  assetType.algorithms,
-  assetType.thirdPartyAssets,
-].map(category => ({ id: category.id, name: category.label }));
-
 export const featuredProductsCategories = {
   id: null,
   name: 'Spotlight',
@@ -47,6 +40,14 @@ export const featuredProductsCategories = {
   ],
 };
 
+export const categories = [
+  assetType.application,
+  assetType.educationCourses,
+  assetType.algorithms,
+  assetType.thirdPartyAssets,
+].map(category => ({ id: category.id, name: category.label }));
+
+// categoriesInline
 export const categories2 = [
   {
     id: assetType.application.id,

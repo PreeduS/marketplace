@@ -46,17 +46,3 @@ export const filters = {
   ),
   tag: (Object.keys(tag) as TagTypeKeys[]).map(key => tag[key]),
 };
-
-/*
-  quantumSolutions: {
-    id: 1,
-    label: 'Quantum solutions'
-  },
-*/
-
-/*
-  foundation: {
-    id: 1,
-    label: 'Foundation',
-  },
-*/

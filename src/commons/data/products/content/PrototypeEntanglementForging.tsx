@@ -1,11 +1,7 @@
-// PrototypeEntanglementForging.tsx
-
 import Typography from 'src/commons/components/Typography';
 import BoxLink from 'src/commons/components/BoxLink';
-import Pricing from 'src/commons/components/Pricing';
-import { UnorderedList, ListItem } from 'carbon-components-react';
 
-import getMockInstructions from 'src/commons/data/getMockInstructions';
+import { UnorderedList, ListItem } from 'carbon-components-react';
 
 const content = {
   productId: 9,
@@ -289,17 +285,7 @@ const content = {
       ),
     },
 
-    pricing: null /*{
-      description: (
-        <>
-          <div style={{ display: 'flex' }}>
-            <Pricing type='Free trial' title='Basic Plan' price={null} />
-            <Pricing type='Monthly' title='Premium Plan' price='1,200' />
-            <Pricing type='Annual' title='Premium Plan' price='11,400' />
-          </div>
-        </>
-      ),
-    },*/,
+    pricing: null,
   },
 };
 

@@ -110,10 +110,6 @@ export const IconContainer = styled.div`
   color: #0066cc;
 `;
 
-export const Description = styled.p`
-  display: flex;
-  margin: 1rem 0;
-`;
 export const BoxItemsInline = styled.div`
   display: flex;
   overflow: hidden;

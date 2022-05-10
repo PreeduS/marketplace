@@ -14,7 +14,6 @@ import {
   CategoryBannerItem,
   CategoryBannerItemHeader,
   CategoryBannerItemFooter,
-  Description,
   BoxItemsInline,
   IconContainer,
   AssetTypeIconContainer,
@@ -96,7 +95,7 @@ const Home = () => {
           </Typography>
         </CategoryBannerTitle>
         <CategoryBannerItemsContainer>
-          {[...categories /*, ...categories2*/].map(category => {
+          {[...categories].map(category => {
             const itemId = `assetType_${category.id}`;
             const filter = {
               assetType: {

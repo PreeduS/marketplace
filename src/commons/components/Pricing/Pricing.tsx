@@ -8,7 +8,7 @@ import {
   Description,
   ButtonContainer,
 } from './Pricing.styled';
-import { Link20 } from '@carbon/icons-react';
+
 import { Button } from 'carbon-components-react';
 import Typography from 'src/commons/components/Typography';
 

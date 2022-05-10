@@ -1,10 +1,4 @@
 import Typography from 'src/commons/components/Typography';
-import BoxLink from 'src/commons/components/BoxLink';
-import Pricing from 'src/commons/components/Pricing';
-import { UnorderedList, ListItem } from 'carbon-components-react';
-
-import getMockInstructions from 'src/commons/data/getMockInstructions';
-import videoImagePath from 'src/commons/data/products/images/video.png';
 
 const content = {
   productId: 10,
