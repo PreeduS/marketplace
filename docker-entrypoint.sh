@@ -6,8 +6,6 @@ export API_PORT=${API_PORT:-5000}
 export PORT=${PORT:-8080}
 
 
-
-#envsubst '${PORT} ${API_HOST} ${API_PORT}' < /tmp/nginx.conf.template > /etc/nginx/nginx.conf
 envsubst '${PORT} ${API_HOST} ${API_PORT}' < /tmp/default.conf > /etc/nginx/conf.d/default.conf
 
 
